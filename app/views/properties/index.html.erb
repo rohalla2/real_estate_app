@@ -1,4 +1,14 @@
-<h1>Listing properties</h1>
+<h1>Available Properties</h1>
+
+ <% @properties.each do |property| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag property.image_url, :class => "col-md-10" %>
+    </div>
+  </div>    
+ <% end %>
+
+
 
 <table>
   <thead>
