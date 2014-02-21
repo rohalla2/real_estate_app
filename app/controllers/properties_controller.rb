@@ -10,6 +10,8 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
+    property_id = params[:id]
+    @property = Property.find_by(id: property_id)
   end
 
   # GET /properties/new

@@ -1,69 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to "Edit This Property", edit_property_path(@property), class: 'pull-right btn btn-large btn-info' %>
+  <%= link_to "Delete This Property", property_path(@property), method: 'delete', class: 'pull-right btn btn-large btn-danger' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+  <h1><%= @property.name %></h1>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @property.description %>
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag @property.image_url, class: 'resized-image' %>
+  </div>
+  <div class="col-md-9">
+    <p class="lead">
+      <strong>Title:</strong>
+      <%= @property.name %>
+    </p>
+    <p class="lead"><strong>Description: </strong><%= @property.description %></p>
+    <p class="lead"><strong>Rent: </strong><%= @property.price %></p>
+    <p class="lead"><strong># Beds: </strong><%= @property.beds %></p>
+    <p class="lead"><strong># Baths: </strong><%= @property.baths %></p>
+    <p class="lead"><strong>SF: </strong><%= @property.square_feet %></p>
+    <p class="lead"><strong>Address: </strong><%= @property.address %></p>
 
-<p>
-  <strong>Beds:</strong>
-  <%= @property.beds %>
-</p>
+  </div>
+</div>
 
-<p>
-  <strong>Baths:</strong>
-  <%= @property.baths %>
-</p>
-
-<p>
-  <strong>Square feet:</strong>
-  <%= @property.square_feet %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @property.price %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @property.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @property.state %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @property.zip_code %>
-</p>
-
-<p>
-  <strong>Has laundry:</strong>
-  <%= @property.has_laundry %>
-</p>
-
-<p>
-  <strong>Has parking:</strong>
-  <%= @property.has_parking %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @property.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>

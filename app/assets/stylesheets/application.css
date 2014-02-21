@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+.resized-image{
+	height: auto;
+	width: 100%;
+}
