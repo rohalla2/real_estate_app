@@ -1,32 +1,32 @@
 all_properties = [ { 
-                  :name          	=> "Super Nice Condo House Apartment",
-                  :description   	=> "This is the description of the house",
-                  :beds          	=> 4,
+                  :name          	  => "Super Nice Condo House Apartment",
+                  :description   	  => "This is the description of the house",
+                  :beds          	  => 4,
                   :baths          	=> 3,
-                  :squre_feet       => 2400,
+                  :square_feet       => 2400,
                   :price          	=> 3000,
                   :address        	=> "1234 North Somewhere Street",
                   :city           	=> "Chicago",
                   :state          	=> "IL",
                   :zip_code        	=> 60606,
-                  :has_laundry		=> true,
-                  :image_url       	=> "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSbr3gqOWUqPOcaTyK6O863JRG4-2sYXX-3RhC0-GKKMXt81EP9yQ",
+                  :has_laundry		  => true,
+                  :image_url       	=> "http://www.welcometosantabarbara.com/condo_montecito.jpg",
                   :has_parking      => true
                 },
                  { 
-                  :name          => "2BR Super Great view",
-                  :description	           => "This is the description of the Second house",
+                  :name           => "2BR Super Great view",
+                  :description	  => "This is the description of the Second house",
                   :beds           => 2,
                   :baths          => 1,
-                  :square_feet        => 1200,
+                  :square_feet    => 1200,
                   :price          => 2000,
                   :address        => "1234 South Michigan Street",
                   :city           => "Chicago",
                   :state          => "IL",
-                  :zip_code        => 60621,
-                  :has_laundry  => true,
-                  :image_url       => "http://blogs.smithsonianmag.com/paleofuture/files/2012/06/jetsons-googie.jpg",
-                  :has_parking        => false
+                  :zip_code       => 60621,
+                  :has_laundry    => true,
+                  :image_url      => "http://0.tqn.com/d/architecture/1/0/W/4/1/Rietveld-Schroder-House.jpg",
+                  :has_parking    => false
                 }
             ]
 
