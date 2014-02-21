@@ -3,58 +3,21 @@
  <% @properties.each do |property| %>
   <div class="row">
     <div class="col-md-3">
-      <%= image_tag property.image_url, :class => "col-md-10" %>
+      <%= link_to(image_tag(property.image_url, :alt => "property_photo", class: "col-md-10"), property_path(property.id)) %>
+      
+    </div>
+    <div class="col-md-9">
+      <h2>
+        <%= link_to property.name, property_path(property) %>
+        (<%= number_to_currency(property.price) %>)
+      </h2>
+      <p class="lead"><%= property.description %></p>
+        <%= link_to "Apply", '#' %> |
+        <%= link_to "Contact Seller", '#' %>
+      </p>
     </div>
   </div>    
  <% end %>
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Beds</th>
-      <th>Baths</th>
-      <th>Square feet</th>
-      <th>Price</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip code</th>
-      <th>Has laundry</th>
-      <th>Has parking</th>
-      <th>Image url</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @properties.each do |property| %>
-      <tr>
-        <td><%= property.name %></td>
-        <td><%= property.description %></td>
-        <td><%= property.beds %></td>
-        <td><%= property.baths %></td>
-        <td><%= property.square_feet %></td>
-        <td><%= property.price %></td>
-        <td><%= property.address %></td>
-        <td><%= property.city %></td>
-        <td><%= property.state %></td>
-        <td><%= property.zip_code %></td>
-        <td><%= property.has_laundry %></td>
-        <td><%= property.has_parking %></td>
-        <td><%= property.image_url %></td>
-        <td><%= link_to 'Show', property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
