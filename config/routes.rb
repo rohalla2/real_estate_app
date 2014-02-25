@@ -1,4 +1,6 @@
 RealEstateApp::Application.routes.draw do
+  resources :users
+
   resources :properties
 
   root 'static_pages#home'
