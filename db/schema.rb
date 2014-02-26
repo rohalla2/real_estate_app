@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225230208) do
+ActiveRecord::Schema.define(version: 20140226180608) do
 
   create_table "properties", force: true do |t|
     t.string   "name"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20140225230208) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tenant_of", force: true do |t|
+    t.integer  "User_id"
+    t.integer  "Property_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tenant_of", ["Property_id"], name: "index_tenant_of_on_Property_id"
+  add_index "tenant_of", ["User_id"], name: "index_tenant_of_on_User_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
