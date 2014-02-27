@@ -18,23 +18,34 @@
   <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
 </head>
 <body>
-	<div class="container">
-	<div class="navbar navbar-default">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="/">Brand</a>
-                </div>
-<ul class="nav navbar-nav">
-                    <li><a href="/properties">Properties</a></li>
-                    <li><a href="#">Link2</a></li>
-                  </ul>                
-              </div>
-		<%= yield %>
-	</div>
+  <div class="container">
+    <div class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Brand</a>
+      </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/properties">Properties</a></li>
+      <li><a href="#">Link2</a></li>
+    </ul>    
+  </div>
+    <% if session[:user_id].nil? %>
+      <%= render 'sessions/form' %>
+    <% else %>
+      <% u = User.find(session[:user_id]) %>
+      <%= button_to 'Logout', logout_path, class: "btn btn-danger pull-right", method: :delete %>
+      <p class="pull-right">
+        <%= "Welcome, #{u.first_name}" %>
+      </p>
+
+      
+    <% end %>
+  <%= yield %>S
+</div>
 
 </body>
 </html>
