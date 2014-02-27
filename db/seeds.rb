@@ -1,7 +1,5 @@
 #!/bin/env ruby 
 # encoding: utf-8
-
-
 all_Property = [ 
 { 
 :id => "1",
@@ -18,9 +16,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215740-09114738.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "1"
 
  }, 
 {
@@ -38,9 +36,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "true",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462206660-09131856.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "1"
 
  }, 
 {
@@ -58,9 +56,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215940-09114805.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "2"
 
  }, 
 {
@@ -78,9 +76,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462216020-09114759.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "2"
 
  }, 
 {
@@ -98,9 +96,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215640-09114755.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "2"
 
  }, 
 {
@@ -118,9 +116,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "true",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215940-09114752.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "2"
 
  }, 
 {
@@ -138,9 +136,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215940-09114748.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "3"
 
  }, 
 {
@@ -158,9 +156,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215700-09114744.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "3"
 
  }, 
 {
@@ -178,9 +176,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23532462215820-09114741.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "3"
 
  }, 
 {
@@ -198,14 +196,219 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "true",
 :image_url => "http://snsimages.tribune.com/media/photo/2009-11/23490253244820-09121121.jpg",
-:created_at => "",
-:updated_at => "",
-:managed_by => ""
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM",
+:user_id => "3"
+
+ } 
+ ]
+all_User = [ 
+{ 
+:first_name => "John",
+:last_name => "Kennedy",
+:password => "thekennedy",
+:email => "John.Kennedy@gmail.com",
+:address => "123 N Lane Street",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60606",
+:picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/John_F._Kennedy%2C_White_House_photo_portrait%2C_looking_up.jpg/220px-John_F._Kennedy%2C_White_House_photo_portrait%2C_looking_up.jpg",
+:user_type => "Manager",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Lebron",
+:last_name => "James",
+:password => "theking",
+:email => "Lebron.James@gmail.com",
+:address => "123 N Lane Street",
+:city => "Miami",
+:state => "FL",
+:zip_code => "33147",
+:picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/LeBron_James_vs_Washington_3-30-11.jpg/235px-LeBron_James_vs_Washington_3-30-11.jpg",
+:user_type => "Manager",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Donald",
+:last_name => "Trump",
+:password => "thetrump",
+:email => "Donald.Trump@gmail.com",
+:address => "123 N Lane Street",
+:city => "Manhattan",
+:state => "NY",
+:zip_code => "10012",
+:picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Donald_Trump_by_Gage_Skidmore.jpg/250px-Donald_Trump_by_Gage_Skidmore.jpg",
+:user_type => "Manager",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Aziz",
+:last_name => "Ansari",
+:password => "theAziz",
+:email => "Aziz.Ansari@gmail.com",
+:address => "123 N Lane Street",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60606",
+:picture_url => "http://www.pastemagazine.com/blogs/lists/assets_c/2013/11/comicsansari-thumb-400x265-96202.jpg",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Louie",
+:last_name => "C.K.",
+:password => "theLouie",
+:email => "Louie.C.K.@gmail.com",
+:address => "123 N Lane Street",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60606",
+:picture_url => "http://www.pastemagazine.com/blogs/lists/assets_c/2013/11/comicsck-thumb-400x266-96206.jpg",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Jerry",
+:last_name => "Seinfeld",
+:password => "theJerry",
+:email => "Jerry.Seinfeld@gmail.com",
+:address => "123 N Lane Street",
+:city => "Miami",
+:state => "FL",
+:zip_code => "33147",
+:picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Jerry_Seinfeld_by_David_Shankbone.jpg/220px-Jerry_Seinfeld_by_David_Shankbone.jpg",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Nick",
+:last_name => "Kroll",
+:password => "theNick",
+:email => "Nick.Kroll@gmail.com",
+:address => "123 N Lane Street",
+:city => "Miami",
+:state => "FL",
+:zip_code => "33147",
+:picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Nick_Kroll_2011_Shankbone.JPG/220px-Nick_Kroll_2011_Shankbone.JPG",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Key",
+:last_name => "Peele",
+:password => "theKey",
+:email => "Key.Peele@gmail.com",
+:address => "123 N Lane Street",
+:city => "Manhattan",
+:state => "NY",
+:zip_code => "10012",
+:picture_url => "http://www.pastemagazine.com/blogs/lists/assets_c/2013/11/keyandpeelemain-thumb-400x299-95779.jpg",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Andrew",
+:last_name => "WK",
+:password => "theAndrew",
+:email => "Andrew.WK@gmail.com",
+:address => "123 N Lane Street",
+:city => "Manhattan",
+:state => "NY",
+:zip_code => "10012",
+:picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Andrew_WK.jpg/220px-Andrew_WK.jpg",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ }, 
+{
+:first_name => "Saul",
+:last_name => "Goodman",
+:password => "theSaul",
+:email => "Saul.Goodman@gmail.com",
+:address => "123 N Lane Street",
+:city => "Manhattan",
+:state => "NY",
+:zip_code => "10012",
+:picture_url => "http://upload.wikimedia.org/wikipedia/en/thumb/1/16/Saul_Goodman.jpg/240px-Saul_Goodman.jpg",
+:user_type => "Tenant",
+:phone_number => "123-456-7890",
+:website => "www.google.com"
+
+ } 
+ ]
+all_TenantOf = [ 
+{ 
+:user_id => "4",
+:property_id => "1",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
+
+ }, 
+{
+:user_id => "5",
+:property_id => "2",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
+
+ }, 
+{
+:user_id => "6",
+:property_id => "3",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
+
+ }, 
+{
+:user_id => "7",
+:property_id => "4",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
+
+ }, 
+{
+:user_id => "8",
+:property_id => "5",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
+
+ }, 
+{
+:user_id => "9",
+:property_id => "4",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
+
+ }, 
+{
+:user_id => "10",
+:property_id => "5",
+:created_at => "2/26/2014 12:50:47 PM",
+:updated_at => "2/26/2014 12:50:47 PM"
 
  } 
  ]
 
 Property.destroy_all
+User.destroy_all
+TenantOf.destroy_all
 
 all_Property.each do |all| 
 n = Property.new
@@ -223,9 +426,33 @@ n.zip_code = all[:zip_code]
 n.has_laundry = all[:has_laundry]
 n.has_parking = all[:has_parking]
 n.image_url = all[:image_url]
-n.created_at = all[:created_at]
-n.updated_at = all[:updated_at]
-n.managed_by = all[:managed_by]
+n.user_id = all[:user_id]
+n.save
+end
+
+all_User.each do |all| 
+n = User.new
+n.id = all[:id]
+n.first_name = all[:first_name]
+n.last_name = all[:last_name]
+n.password = all[:password]
+n.password_confirmation = all[:password]
+n.email = all[:email]
+n.address = all[:address]
+n.city = all[:city]
+n.state = all[:state]
+n.zip_code = all[:zip_code]
+n.picture_url = all[:picture_url]
+n.user_type = all[:user_type]
+n.phone_number = all[:phone_number]
+n.website = all[:website]
+n.save!
+end
+
+all_TenantOf.each do |all| 
+n = TenantOf.new
+n.User_id = all[:user_id]
+n.Property_id = all[:property_id]
 n.save
 end
 
