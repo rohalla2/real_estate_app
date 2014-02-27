@@ -30,14 +30,19 @@
       </div>
     <ul class="nav navbar-nav">
       <li><a href="/properties">Properties</a></li>
-      <li><a href="#">Link2</a></li>
-    </ul>    
+      
+    </ul>
+      <% if session[:user_id].nil? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign Up", new_user_path %></li>
+        </ul>
+        <%= render 'sessions/form' %>
+      <% end %>    
   </div>
-    <% if session[:user_id].nil? %>
-      <%= render 'sessions/form' %>
-    <% else %>
+    <% if session[:user_id] %>
       <% u = User.find(session[:user_id]) %>
       <%= button_to 'Logout', logout_path, class: "btn btn-danger pull-right", method: :delete %>
+      <%= link_to 'Your Profile', user_path(u), class: "btn btn-success pull-right" %>
       <p class="pull-right">
         <%= "Welcome, #{u.first_name}" %>
       </p>
