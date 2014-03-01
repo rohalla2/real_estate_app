@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :properties
 	USER_TYPES = ["Manager", "Tenant"]
   	validates :first_name, :last_name, :address, :city, :state, :zip_code, :picture_url, presence: true
   	validates :email, presence: true, uniqueness: true
