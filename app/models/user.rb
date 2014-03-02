@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 	has_many :properties
+	before_validation :downcase_username
+	before_create :downcase_username
+
 	USER_TYPES = ["Manager", "Tenant"]
   	validates :first_name, :last_name, :address, :city, :state, :zip_code, :picture_url, presence: true
   	validates :email, presence: true, uniqueness: true
@@ -9,4 +12,9 @@ class User < ActiveRecord::Base
 		message: 'must be a URL for GIF, JPG or PNG image'
 	}
   has_secure_password
+
+  private
+		def downcase_username
+			self.email.downcase!
+		end
 end

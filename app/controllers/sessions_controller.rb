@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	user = User.find_by(email: params[:email])
+    user_email = params[:email].downcase!
+  	user = User.find_by(email: user_email)
   	if user and user.authenticate(params[:password])
   		session[:user_id] = user.id
   		redirect_to properties_url
