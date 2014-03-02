@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226184242) do
+ActiveRecord::Schema.define(version: 20140302212100) do
 
   create_table "properties", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.integer  "beds"
     t.float    "baths"
     t.integer  "square_feet"
