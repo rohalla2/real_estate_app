@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302212100) do
+ActiveRecord::Schema.define(version: 20140305175134) do
+
+  create_table "applications", force: true do |t|
+    t.integer  "User_id"
+    t.integer  "Property_id"
+    t.float    "price_offer"
+    t.text     "conditions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "applications", ["Property_id"], name: "index_applications_on_Property_id"
+  add_index "applications", ["User_id"], name: "index_applications_on_User_id"
+
+  create_table "messages", force: true do |t|
+    t.string   "title"
+    t.text     "message"
+    t.string   "message_type"
+    t.integer  "User_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["User_id"], name: "index_messages_on_User_id"
+
+  create_table "payments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.float    "amount"
+    t.string   "bank_routing_number"
+    t.string   "bank_account_number"
+    t.string   "account_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["property_id"], name: "index_payments_on_property_id"
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id"
 
   create_table "properties", force: true do |t|
     t.string   "name"
@@ -30,13 +67,25 @@ ActiveRecord::Schema.define(version: 20140302212100) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "is_available"
+    t.date     "date_available"
   end
+
+  create_table "receives", force: true do |t|
+    t.integer  "User_id"
+    t.integer  "Message_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "receives", ["User_id"], name: "index_receives_on_User_id"
 
   create_table "tenant_ofs", force: true do |t|
     t.integer  "User_id"
     t.integer  "Property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_active"
   end
 
   add_index "tenant_ofs", ["Property_id"], name: "index_tenant_ofs_on_Property_id"
