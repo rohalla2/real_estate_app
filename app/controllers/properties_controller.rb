@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_manager, only: [:new, :create, :edit, :destroy]
+  before_action :check_if_manager, only: [:new, :create, :edit, :destroy, :update]
 
 
   #Restrict only allowing Manager's can create new properties
