@@ -5,6 +5,15 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
+    
+    user_id = session[:user_id]
+    curruser = User.find_by(user_id)
+    if curruser.user_type == "Manager"
+      @manager = true
+    else
+      @manager = false
+    end if
+
   end
 
   # GET /properties/1
@@ -12,6 +21,7 @@ class PropertiesController < ApplicationController
   def show
     property_id = params[:id]
     @property = Property.find_by(id: property_id)
+    @manager_id = @property.user_id
   end
 
   # GET /properties/new

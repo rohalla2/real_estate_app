@@ -1,6 +1,9 @@
 <div class="page-header">
+
+  <% if session[:user_id] == @manager_id %>
   <%= link_to "Edit This Property", edit_property_path(@property), class: 'pull-right btn btn-large btn-info' %>
   <%= link_to "Delete This Property", property_path(@property), method: 'delete', class: 'pull-right btn btn-large btn-danger' %>
+  <% end if %>
 
   <h1><%= @property.name %></h1>
 </div>

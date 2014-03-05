@@ -1,6 +1,11 @@
 <h1>Available Properties</h1>
 
  <% @properties.each do |property| %>
+
+ <% if @manager %>
+  <%= link_to 'New Property', new_property_path %>
+<% end if %>
+
   <div class="row">
     <div class="col-md-3">
       <%= link_to(image_tag(property.image_url, :alt => "property_photo", class: "col-md-10"), property_path(property.id)) %>
@@ -21,4 +26,3 @@
 
 <br>
 
-<%= link_to 'New Property', new_property_path %>
