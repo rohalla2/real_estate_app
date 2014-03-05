@@ -1,0 +1,37 @@
+<h1>Listing payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Property</th>
+      <th>Amount</th>
+      <th>Bank routing number</th>
+      <th>Bank account number</th>
+      <th>Account type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.user %></td>
+        <td><%= payment.property %></td>
+        <td><%= payment.amount %></td>
+        <td><%= payment.bank_routing_number %></td>
+        <td><%= payment.bank_account_number %></td>
+        <td><%= payment.account_type %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment', new_payment_path %>

@@ -17,7 +17,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "false",
 :image_url => "http://lh4.ggpht.com/_dlkAw43cLC0/SRxCyCz7O4I/AAAAAAAAAeo/9R7BlywFLxg/s800/34-domehouse-thumb.jpg",
-:user_id => "1"
+:user_id => "1",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -35,7 +37,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "true",
 :image_url => "http://cdn.frontdoor.com/dims4/SCRIPPS/dba8599/2147483647/thumbnail/630x473%5E/quality/75/?url=http%3A%2F%2Fcdn.frontdoor.com%2F93%2F1d%2F9c5b673147e9a42dd17b89f371a2%2F22714-kf-insight7.jpg",
-:user_id => "1"
+:user_id => "1",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -53,7 +57,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://media.tumblr.com/8XzUlvJKGh3dmv1aYqS8Cocho1_500.jpg",
-:user_id => "2"
+:user_id => "2",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -71,7 +77,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "false",
 :image_url => "http://www.designboom.com/tools/WPro/images/08-1decemberblogs/shell01.jpg",
-:user_id => "2"
+:user_id => "2",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -89,7 +97,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Nakagin_Capsule_Tower_02.jpg/450px-Nakagin_Capsule_Tower_02.jpg",
-:user_id => "2"
+:user_id => "2",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -107,7 +117,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "true",
 :image_url => "http://cdn.freshome.com/wp-content/uploads/2010/09/Letterbox-House-2.jpg",
-:user_id => "2"
+:user_id => "2",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -125,7 +137,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "false",
 :image_url => "http://www.inhabitat.com/wp-content/uploads/birdisland-ed01.jpg",
-:user_id => "3"
+:user_id => "3",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -143,7 +157,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://www.inhabitat.com/wp-content/uploads/slidinghousehooray.jpg",
-:user_id => "3"
+:user_id => "3",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  }, 
 {
@@ -161,7 +177,9 @@ all_Property = [
 :has_laundry => "false",
 :has_parking => "false",
 :image_url => "http://1.media.tumblr.com/9cyPFQbgCni5vc9vyAKFnOllo1_500.jpg",
-:user_id => "3"
+:user_id => "3",
+:date_available => "1/1/2014",
+:is_available => "false"
 
  }, 
 {
@@ -179,7 +197,9 @@ all_Property = [
 :has_laundry => "true",
 :has_parking => "true",
 :image_url => "http://freshome.com/wp-content/uploads/2007/10/toilet-house.jpg",
-:user_id => "3"
+:user_id => "3",
+:date_available => "1/1/2014",
+:is_available => "true"
 
  } 
  ]
@@ -348,37 +368,299 @@ all_User = [
 all_TenantOf = [ 
 { 
 :User_id => "4",
-:Property_id => "1"
+:Property_id => "1",
+:is_active => "true"
 
  }, 
 {
 :User_id => "5",
-:Property_id => "2"
+:Property_id => "2",
+:is_active => "true"
 
  }, 
 {
 :User_id => "6",
-:Property_id => "3"
+:Property_id => "3",
+:is_active => "true"
 
  }, 
 {
 :User_id => "7",
-:Property_id => "4"
+:Property_id => "4",
+:is_active => "true"
 
  }, 
 {
 :User_id => "8",
-:Property_id => "5"
+:Property_id => "5",
+:is_active => "false"
 
  }, 
 {
 :User_id => "9",
-:Property_id => "4"
+:Property_id => "4",
+:is_active => "true"
 
  }, 
 {
 :User_id => "10",
-:Property_id => "5"
+:Property_id => "5",
+:is_active => "true"
+
+ } 
+ ]
+all_Message = [ 
+{ 
+:title => "Broken Sink",
+:message => "Hey, my sink broke, so you could you like fix it dude",
+:message_type => "UTIL",
+:User_id => "4",
+:created_at => "3/2/2014 12:10:40 PM",
+:updated_at => "3/2/2014 12:10:40 PM"
+
+ }, 
+{
+:title => "RE: Broken Sink",
+:message => "Yea, I'll take care of it Tuesday",
+:message_type => "UTIL",
+:User_id => "1",
+:created_at => "3/3/2014 12:10:40 PM",
+:updated_at => "3/3/2014 12:10:40 PM"
+
+ }, 
+{
+:title => "RE: Broken Sink",
+:message => "Thanks",
+:message_type => "UTIL",
+:User_id => "4",
+:created_at => "3/4/2014 12:10:40 PM",
+:updated_at => "3/4/2014 12:10:40 PM"
+
+ }, 
+{
+:title => "RE: Broken Sink",
+:message => "Its complete, let me know if there is any problems",
+:message_type => "UTIL",
+:User_id => "1",
+:created_at => "3/5/2014 12:10:40 PM",
+:updated_at => "3/5/2014 12:10:40 PM"
+
+ }, 
+{
+:title => "Rent is Due",
+:message => "Rent is due in three days",
+:message_type => "RENT",
+:User_id => "2",
+:created_at => "3/3/2014 12:10:40 PM",
+:updated_at => "3/3/2014 12:10:40 PM"
+
+ }, 
+{
+:title => "RE: Rent is due",
+:message => "I'm going to be a bit late.. Sorry",
+:message_type => "RENT",
+:User_id => "6",
+:created_at => "3/4/2014 12:10:40 PM",
+:updated_at => "3/4/2014 12:10:40 PM"
+
+ }, 
+{
+:title => "RE: Rent is Due",
+:message => "check your account, its in there",
+:message_type => "RENT",
+:User_id => "7",
+:created_at => "3/5/2014 12:10:40 PM",
+:updated_at => "3/5/2014 12:10:40 PM"
+
+ } 
+ ]
+all_Application = [ 
+{ 
+:User_id => "4",
+:Property_id => "1",
+:price_offer => "2300",
+:conditions => ""
+
+ }, 
+{
+:User_id => "5",
+:Property_id => "2",
+:price_offer => "2100",
+:conditions => ""
+
+ }, 
+{
+:User_id => "6",
+:Property_id => "3",
+:price_offer => "700",
+:conditions => ""
+
+ }, 
+{
+:User_id => "7",
+:Property_id => "4",
+:price_offer => "2500",
+:conditions => ""
+
+ }, 
+{
+:User_id => "8",
+:Property_id => "5",
+:price_offer => "699",
+:conditions => ""
+
+ }, 
+{
+:User_id => "9",
+:Property_id => "4",
+:price_offer => "2500",
+:conditions => ""
+
+ }, 
+{
+:User_id => "10",
+:Property_id => "5",
+:price_offer => "699",
+:conditions => ""
+
+ }, 
+{
+:User_id => "4",
+:Property_id => "2",
+:price_offer => "2400",
+:conditions => ""
+
+ }, 
+{
+:User_id => "4",
+:Property_id => "3",
+:price_offer => "1900",
+:conditions => ""
+
+ } 
+ ]
+all_Receives = [ 
+{ 
+:User_id => "1",
+:Message_id => "1"
+
+ }, 
+{
+:User_id => "4",
+:Message_id => "2"
+
+ }, 
+{
+:User_id => "1",
+:Message_id => "3"
+
+ }, 
+{
+:User_id => "4",
+:Message_id => "4"
+
+ }, 
+{
+:User_id => "6",
+:Message_id => "5"
+
+ }, 
+{
+:User_id => "7",
+:Message_id => "5"
+
+ }, 
+{
+:User_id => "2",
+:Message_id => "6"
+
+ }, 
+{
+:User_id => "2",
+:Message_id => "7"
+
+ } 
+ ]
+all_Payment = [ 
+{ 
+:user_id => "4",
+:property_id => "1",
+:amount => "2300",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Checking"
+
+ }, 
+{
+:user_id => "5",
+:property_id => "2",
+:amount => "2100",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Checking"
+
+ }, 
+{
+:user_id => "6",
+:property_id => "3",
+:amount => "700",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Checking"
+
+ }, 
+{
+:user_id => "7",
+:property_id => "4",
+:amount => "2500",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Checking"
+
+ }, 
+{
+:user_id => "8",
+:property_id => "5",
+:amount => "699",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Checking"
+
+ }, 
+{
+:user_id => "9",
+:property_id => "4",
+:amount => "2500",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Checking"
+
+ }, 
+{
+:user_id => "10",
+:property_id => "5",
+:amount => "699",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Savings"
+
+ }, 
+{
+:user_id => "4",
+:property_id => "2",
+:amount => "2400",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Savings"
+
+ }, 
+{
+:user_id => "4",
+:property_id => "3",
+:amount => "1900",
+:bank_routing_number => "10101010",
+:bank_account_number => "12341243",
+:account_type => "Savings"
 
  } 
  ]
@@ -386,6 +668,10 @@ all_TenantOf = [
 Property.destroy_all
 User.destroy_all
 TenantOf.destroy_all
+Message.destroy_all
+Application.destroy_all
+Receives.destroy_all
+Payment.destroy_all
 
 nC = 1
 all_Property.each do |all| 
@@ -405,6 +691,8 @@ n.has_laundry = all[:has_laundry]
 n.has_parking = all[:has_parking]
 n.image_url = all[:image_url]
 n.user_id = all[:user_id]
+n.date_available = all[:date_available]
+n.is_available = all[:is_available]
 n.save
 nC += 1
 end
@@ -436,6 +724,57 @@ n = TenantOf.new
 n.id = nC
 n.User_id = all[:User_id]
 n.Property_id = all[:Property_id]
+n.is_active = all[:is_active]
+n.save
+nC += 1
+end
+
+nC = 1
+all_Message.each do |all| 
+n = Message.new
+n.id = nC
+n.title = all[:title]
+n.message = all[:message]
+n.message_type = all[:message_type]
+n.User_id = all[:User_id]
+n.created_at = all[:created_at]
+n.updated_at = all[:updated_at]
+n.save
+nC += 1
+end
+
+nC = 1
+all_Application.each do |all| 
+n = Application.new
+n.id = nC
+n.User_id = all[:User_id]
+n.Property_id = all[:Property_id]
+n.price_offer = all[:price_offer]
+n.conditions = all[:conditions]
+n.save
+nC += 1
+end
+
+nC = 1
+all_Receives.each do |all| 
+n = Receives.new
+n.id = nC
+n.User_id = all[:User_id]
+n.Message_id = all[:Message_id]
+n.save
+nC += 1
+end
+
+nC = 1
+all_Payment.each do |all| 
+n = Payment.new
+n.id = nC
+n.user_id = all[:user_id]
+n.property_id = all[:property_id]
+n.amount = all[:amount]
+n.bank_routing_number = all[:bank_routing_number]
+n.bank_account_number = all[:bank_account_number]
+n.account_type = all[:account_type]
 n.save
 nC += 1
 end

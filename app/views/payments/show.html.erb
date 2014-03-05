@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @payment.user %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @payment.property %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Bank routing number:</strong>
+  <%= @payment.bank_routing_number %>
+</p>
+
+<p>
+  <strong>Bank account number:</strong>
+  <%= @payment.bank_account_number %>
+</p>
+
+<p>
+  <strong>Account type:</strong>
+  <%= @payment.account_type %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>
