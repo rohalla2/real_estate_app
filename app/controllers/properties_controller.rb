@@ -1,12 +1,24 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_manager, only: [:new, :create, :edit, :destroy]
+
+
+  #Restrict only allowing Manager's can create new properties
+  def check_if_manager
+     @user = User.find_by(id: session[:user_id] )
+    if @user.user_type != "Manager"
+      redirect_to properties_path, notice: "Only Managers are authorized to perform this function" 
+    end
+  end
+
+
 
   # GET /properties
   # GET /properties.json
   def index
     @properties = Property.all    
 
-    @user = User.find_by(session[:user_id] )
+    @user = User.find_by(id: session[:user_id] )
 
   end
 
@@ -21,13 +33,6 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-
-    #Restrict only allowing Manager's can create new properties
-    @user = User.find_by(session[:user_id] )
-    if @user.user_type != "Manager"
-      redirect_to properties_path, notice: "Only Managers are authorized to create new properties" 
-    end if
-
   end
 
   # GET /properties/1/edit
@@ -37,12 +42,8 @@ class PropertiesController < ApplicationController
   # POST /properties
   # POST /properties.json
   def create
-    #Restrict only allowing Manager's can create new properties
-    if @user.user_type != "Manager"
-      redirect_to properties_path, notice: "Only Managers are authorized to create new properties" 
-    end if
-
     @property = Property.new(property_params)
+    @property.user_id = session[:user_id]
 
     respond_to do |format|
       if @property.save
