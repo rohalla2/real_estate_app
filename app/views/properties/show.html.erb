@@ -17,13 +17,32 @@
       <strong>Title:</strong>
       <%= @property.name %>
     </p>
+    <p class="lead"><strong>Manager: </strong>
+      <%= User.find_by(id: @manager_id).first_name %>
+      <%= User.find_by(id: @manager_id).last_name %>
+    </p>
     <p class="lead"><strong>Description: </strong><%= @property.description %></p>
     <p class="lead"><strong>Rent: </strong><%= @property.price %></p>
     <p class="lead"><strong># Beds: </strong><%= @property.beds %></p>
     <p class="lead"><strong># Baths: </strong><%= @property.baths %></p>
-    <p class="lead"><strong>SF: </strong><%= @property.square_feet %></p>
+    <p class="lead"><strong>Square Feet: </strong><%= @property.square_feet %></p>
     <p class="lead"><strong>Address: </strong><%= @property.address %></p>
+    <p class="lead"><strong>City: </strong><%= @property.city %></p>
+    <p class="lead"><strong>State: </strong><%= @property.state %></p>
+    <p class="lead"><strong>Zip Code: </strong><%= @property.has_laundry %></p>
+    <p class="lead"><strong>Laundry: </strong><%= @property.has_parking %></p>
+    <p class="lead"><strong>Parking: </strong><%= @property.address %></p>
+    <p class="lead"><strong>First Posted: </strong><%= @property.created_at %></p>
+
+
+
+
+
+    <%= link_to "Apply", '#' %> |
+    <!-- link to send link to the owner of the property -->
+    <%= link_to "Contact Seller", href="mailto:#{User.find_by(id: @manager_id).email}" %>
 
   </div>
 </div>
 
+  
