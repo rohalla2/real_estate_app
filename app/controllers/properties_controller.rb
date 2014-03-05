@@ -4,15 +4,9 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
-    
-    user_id = session[:user_id]
-    curruser = User.find_by(user_id)
-    if curruser.user_type == "Manager"
-      @manager = true
-    else
-      @manager = false
-    end if
+    @properties = Property.all    
+
+    @user = User.find_by(session[:user_id] )
 
   end
 
@@ -27,6 +21,13 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
+
+    #Restrict only allowing Manager's can create new properties
+    @user = User.find_by(session[:user_id] )
+    if @user.user_type != "Manager"
+      redirect_to properties_path, notice: "Only Managers are authorized to create new properties" 
+    end if
+
   end
 
   # GET /properties/1/edit
@@ -36,6 +37,11 @@ class PropertiesController < ApplicationController
   # POST /properties
   # POST /properties.json
   def create
+    #Restrict only allowing Manager's can create new properties
+    if @user.user_type != "Manager"
+      redirect_to properties_path, notice: "Only Managers are authorized to create new properties" 
+    end if
+
     @property = Property.new(property_params)
 
     respond_to do |format|
