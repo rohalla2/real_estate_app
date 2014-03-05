@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  property_id: 
+  amount: 1.5
+  bank_routing_number: MyString
+  bank_account_number: MyString
+  account_type: MyString
+
+two:
+  user_id: 
+  property_id: 
+  amount: 1.5
+  bank_routing_number: MyString
+  bank_account_number: MyString
+  account_type: MyString

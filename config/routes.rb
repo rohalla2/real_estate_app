@@ -1,4 +1,6 @@
 RealEstateApp::Application.routes.draw do
+  resources :payments
+
   resources :applications
 
   resources :messages
