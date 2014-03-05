@@ -1,4 +1,8 @@
 RealEstateApp::Application.routes.draw do
+  resources :applications
+
+  resources :messages
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
