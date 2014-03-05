@@ -16,7 +16,8 @@
       </h2>
       <p class="lead"><%= property.description %></p>
         <%= link_to "Apply", '#' %> |
-        <%= link_to "Contact Seller", '#' %>
+        <!-- link to send link to the owner of the property -->
+        <%= link_to "Contact Seller", href="mailto:#{User.find_by(id: Property.find_by(id: property).user_id).email}" %>
       </p>
     </div>
   </div>    
