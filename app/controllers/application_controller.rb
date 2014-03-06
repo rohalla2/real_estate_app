@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
       end
     end
 
+     #Restrict only allowing Manager's can create new properties
+  def check_if_manager
+    if (!@user) || (@user && @user.user_type != "Manager") #if user is not logged in, or a logged in user is not a manager
+      redirect_to properties_path, notice: "Only Managers are authorized to perform this function" 
+    end
+  end
+
 end
