@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :properties
+	has_many :messages
 	before_validation :downcase_username
 	before_create :downcase_username
 

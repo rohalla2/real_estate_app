@@ -1,10 +1,13 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = @user.messages.all
+   # @messages = @user.receives.messages
+    #Receives.where("user_id = #{@user.id}")
   end
 
   # GET /messages/1
@@ -19,6 +22,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    redirect_to messages_url, notice: "You cannot edit a message after it is sent."
   end
 
   # POST /messages
@@ -40,15 +44,16 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
   def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to messages_url, notice: "You cannot edit a message after it is sent."
+    # respond_to do |format|
+    #   if @message.update(message_params)
+    #     format.html { redirect_to @message, notice: 'Message was successfully updated.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: 'edit' }
+    #     format.json { render json: @message.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /messages/1
