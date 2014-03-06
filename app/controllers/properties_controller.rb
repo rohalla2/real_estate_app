@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :check_if_manager, only: [:new, :create, :edit, :destroy, :update]
-
+  before_action :find_user
 
   #Restrict only allowing Manager's can create new properties
   def check_if_manager
@@ -18,7 +18,7 @@ class PropertiesController < ApplicationController
   def index
     @properties = Property.all    
 
-    @user = User.find_by(id: session[:user_id] )
+    #@user = User.find_by(id: session[:user_id] )
 
   end
 

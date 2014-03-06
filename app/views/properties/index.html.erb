@@ -24,8 +24,7 @@
  <% end %>
 
 
-<div class="container">
-   <% if @user.user_type == "Manager" %>
-    <%= link_to 'New Property', new_property_path, class: "btn btn-success pull-left" %>
-  <% end if %>
-</div>
+<% if @user && @user.user_type == "Manager" %>
+  <%= link_to 'New Property', new_property_path, class: "btn btn-success pull-left" %>
+<% end if %>
+
