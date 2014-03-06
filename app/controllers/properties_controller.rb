@@ -1,12 +1,10 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :check_if_manager, only: [:new, :create, :edit, :destroy, :update]
-  before_action :find_user
-
+  
   #Restrict only allowing Manager's can create new properties
   def check_if_manager
-     @user = User.find_by(id: session[:user_id] )
-    if @user.user_type != "Manager"
+    if (!@user) || (@user && @user.user_type != "Manager") #if user is not logged in, or a logged in user is not a manager
       redirect_to properties_path, notice: "Only Managers are authorized to perform this function" 
     end
   end
@@ -17,9 +15,6 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all    
-
-    #@user = User.find_by(id: session[:user_id] )
-
   end
 
   # GET /properties/1
