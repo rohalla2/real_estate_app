@@ -43,8 +43,6 @@ class TenantOfsController < ApplicationController
   def destroy
     @tenant_of.destroy
     redirect_to :back, notice: 'Tenant was removed.'
-
-
   end
 
   private
