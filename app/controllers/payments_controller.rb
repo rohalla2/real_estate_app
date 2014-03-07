@@ -15,6 +15,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
+    @property_id = params["propertyID"]
     @payment = Payment.new
   end
 
@@ -26,6 +27,10 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
+    property_id = params["property_id"]
+    @payment.user_id = @user.id
+    @payment.property_id = property_id
+
 
     respond_to do |format|
       if @payment.save
