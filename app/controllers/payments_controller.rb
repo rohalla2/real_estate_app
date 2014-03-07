@@ -10,6 +10,7 @@ class PaymentsController < ApplicationController
   # GET /payments/1
   # GET /payments/1.json
   def show
+    @payments = Payment.all
   end
 
   # GET /payments/new
