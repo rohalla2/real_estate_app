@@ -1,5 +1,6 @@
 class TenantOfsController < ApplicationController
   before_action :set_tenant_of, only: [:show, :edit, :update, :destroy]
+  before_action :set_propertyID
 
   # GET /tenant_ofs
   def index
@@ -26,14 +27,14 @@ class TenantOfsController < ApplicationController
   def create
     @tenant_of = TenantOf.new
     email = params["email"].downcase
-    property_id = params["property_id"]
+    @property_id = params["property_id"]
     user = User.find_by(email: email)
     @tenant_of.User_id = user.id
-    @tenant_of.Property_id = property_id
+    @tenant_of.Property_id = @property_id
 
     #REDIRECT NOT WORKING CORRECTLY - NEEDS ADDITIONAL WORK
     if @tenant_of.save
-      redirect_to "tenant_ofs?propertyID=#{property_id}", notice: 'Tenant of was successfully created.'
+      redirect_to "../properties/#{@property_id}", notice: 'Tenant of was successfully created.'
     else
       render action: 'new'
     end 
@@ -42,7 +43,8 @@ class TenantOfsController < ApplicationController
   # DELETE /tenant_ofs/1
   def destroy
     @tenant_of.destroy
-    redirect_to tenant_ofs_url, notice: 'Tenant of was successfully destroyed.'
+    #NEED TO REDIRECT SO THE PROPERTY ID FOLLOWS THROUGH
+    redirect_to "../properties/#{@property_id}", notice: 'Tenant of was successfully destroyed.'
   end
 
   private
@@ -54,5 +56,9 @@ class TenantOfsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def tenant_of_params
       params.require[:tenant_of].permit(:User_id, :propertyID)
+    end
+
+    def set_propertyID
+      @property_id = params["property_id"]
     end
 end
