@@ -414,63 +414,63 @@ all_Message = [
 :title => "Broken Sink",
 :message => "Hey, my sink broke, so you could you like fix it dude",
 :message_type => "UTIL",
-:User_id => "4",
-:created_at => "3/3/2014 7:09:00 PM",
-:updated_at => "3/3/2014 7:09:00 PM"
+:user_id => "4",
+:created_at => "3/3/2014 8:46:28 PM",
+:updated_at => "3/3/2014 8:46:28 PM"
 
  }, 
 {
 :title => "RE: Broken Sink",
 :message => "Yea, I'll take care of it Tuesday",
 :message_type => "UTIL",
-:User_id => "1",
-:created_at => "3/4/2014 7:09:00 PM",
-:updated_at => "3/4/2014 7:09:00 PM"
+:user_id => "1",
+:created_at => "3/4/2014 8:46:28 PM",
+:updated_at => "3/4/2014 8:46:28 PM"
 
  }, 
 {
 :title => "RE: Broken Sink",
 :message => "Thanks",
 :message_type => "UTIL",
-:User_id => "4",
-:created_at => "3/5/2014 7:09:00 PM",
-:updated_at => "3/5/2014 7:09:00 PM"
+:user_id => "4",
+:created_at => "3/5/2014 8:46:28 PM",
+:updated_at => "3/5/2014 8:46:28 PM"
 
  }, 
 {
 :title => "RE: Broken Sink",
 :message => "Its complete, let me know if there is any problems",
 :message_type => "UTIL",
-:User_id => "1",
-:created_at => "3/6/2014 7:09:00 PM",
-:updated_at => "3/6/2014 7:09:00 PM"
+:user_id => "1",
+:created_at => "3/6/2014 8:46:28 PM",
+:updated_at => "3/6/2014 8:46:28 PM"
 
  }, 
 {
 :title => "Rent is Due",
 :message => "Rent is due in three days",
 :message_type => "RENT",
-:User_id => "2",
-:created_at => "3/4/2014 7:09:00 PM",
-:updated_at => "3/4/2014 7:09:00 PM"
+:user_id => "2",
+:created_at => "3/4/2014 8:46:28 PM",
+:updated_at => "3/4/2014 8:46:28 PM"
 
  }, 
 {
 :title => "RE: Rent is due",
 :message => "I'm going to be a bit late.. Sorry",
 :message_type => "RENT",
-:User_id => "6",
-:created_at => "3/5/2014 7:09:00 PM",
-:updated_at => "3/5/2014 7:09:00 PM"
+:user_id => "6",
+:created_at => "3/5/2014 8:46:28 PM",
+:updated_at => "3/5/2014 8:46:28 PM"
 
  }, 
 {
 :title => "RE: Rent is Due",
 :message => "check your account, its in there",
 :message_type => "RENT",
-:User_id => "7",
-:created_at => "3/6/2014 7:09:00 PM",
-:updated_at => "3/6/2014 7:09:00 PM"
+:user_id => "7",
+:created_at => "3/6/2014 8:46:28 PM",
+:updated_at => "3/6/2014 8:46:28 PM"
 
  } 
  ]
@@ -736,7 +736,7 @@ n.id = nC
 n.title = all[:title]
 n.message = all[:message]
 n.message_type = all[:message_type]
-n.User_id = all[:User_id]
+n.user_id = all[:user_id]
 n.created_at = all[:created_at]
 n.updated_at = all[:updated_at]
 n.save
@@ -758,7 +758,7 @@ end
 nC = 1
 all_Recipient.each do |all| 
 n = Recipient.new
-#n.id = nC
+n.id = nC
 n.user_id = all[:User_id]
 n.message_id = all[:Message_id]
 n.save
