@@ -12,6 +12,15 @@
   <tbody>
     <% @tenant_ofs.each do |tenant_of| %>
       <tr>
+        <td><%= 
+          User.find_by(id: tenant_of.User_id).first_name + " " +
+          User.find_by(id: tenant_of.User_id).last_name
+         %></td>
+         <td><%=
+          Property.find_by(id: tenant_of.Property_id).name
+         %></td>
+   
+
         <td><%= link_to 'Show', tenant_of %></td>
         <td><%= link_to 'Edit', edit_tenant_of_path(tenant_of) %></td>
         <td><%= link_to 'Destroy', tenant_of, method: :delete, data: { confirm: 'Are you sure?' } %></td>
