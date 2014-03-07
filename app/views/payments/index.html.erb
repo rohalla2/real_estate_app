@@ -3,8 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Property</th>
+      <th>Date/Time</th>
+      <th>Tenant Name</th>
+      <th>Property Owner</th>
       <th>Amount</th>
       <th>Bank routing number</th>
       <th>Bank account number</th>
@@ -18,8 +19,12 @@
   <tbody>
     <% @payments.each do |payment| %>
       <tr>
-        <td><%= payment.user %></td>
-        <td><%= payment.property %></td>
+        <!-- finds the manager of the property -->
+        <% property = Property.find_by(id: payment.property_id).user_id %>
+        <% manager = User.find_by(id: property ) %>
+        <td><%= payment.updated_at %></td>
+        <td><%= payment.user.first_name + " " + payment.user.last_name%></td>
+        <td><%= manager.first_name + " " + manager.last_name %></td>
         <td><%= payment.amount %></td>
         <td><%= payment.bank_routing_number %></td>
         <td><%= payment.bank_account_number %></td>

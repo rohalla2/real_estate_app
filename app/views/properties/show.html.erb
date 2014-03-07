@@ -3,11 +3,12 @@
   <% if session[:user_id] == @manager_id %>
   <%= link_to "Edit This Property", edit_property_path(@property), class: 'pull-right btn btn-large btn-info' %>
   <%= link_to "Delete This Property", property_path(@property), method: 'delete', class: 'pull-right btn btn-large btn-danger' %>
-<!--   sending to the show page, not the index page -- look into this -->
 
-  
   <a class="pull-right btn btn-large btn-warning" href="../tenant_ofs?propertyID=<%= @property.id %>" role="button">
   View Tenants</a>
+
+  <a class="pull-right btn btn-large btn-success" href="../tenant_ofs/new?propertyID=<%= @property.id %>" role="button">
+  Add Tenant</a>
 
   <% end if %>
 

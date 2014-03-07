@@ -9,7 +9,6 @@
 
     <p class="lead"><strong>Email: </strong><%= @tenant.email %></p>
     <p class="lead"><strong>Phone Number: </strong><%= @tenant.phone_number %></p>
-</div>
+	<a class="btn btn-large btn-info" href="..?propertyID=<%= @property %>" role="button"> back</a>
+ </div>
 
-<%= link_to 'Edit', edit_tenant_of_path(@tenant_of) %> |
-<%= link_to 'Back', tenant_ofs_path %>
