@@ -11,6 +11,19 @@
     </div>
   <% end %>
 
+   <div class="field">
+    <%= f.label "User's Email" %><br>
+    <%= f.text_field :User_id %>
+    email_field("user", "address")
+  </div>
+
+  <p>
+  User must be registered to be added as a tenant!
+  </p>
+  
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
