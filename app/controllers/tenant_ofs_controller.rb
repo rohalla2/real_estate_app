@@ -6,10 +6,20 @@ class TenantOfsController < ApplicationController
     @tenant_ofs = TenantOf.all
   end
 
+
+   # GET /tenant_ofs/1
+  def show
+    tenant_id = TenantOf.find_by(id: params[:id])   
+    @tenant = User.find_by(id: tenant_id.User_id) #identifies who the user is for the show page
+  end
+
+
   # GET /tenant_ofs/new
   def new
     @tenant_of = TenantOf.new
   end
+
+
 
   # GET /tenant_ofs/1/edit
   def edit

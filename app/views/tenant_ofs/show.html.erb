@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="col-md-9">
+    <p class="lead">
+      <strong>Name:</strong>
+      <%= @tenant.first_name %> <%= @tenant.last_name %> 
+    </p>
+
+    <p class="lead"><strong>Email: </strong><%= @tenant.email %></p>
+    <p class="lead"><strong>Phone Number: </strong><%= @tenant.phone_number %></p>
+</div>
+
 <%= link_to 'Edit', edit_tenant_of_path(@tenant_of) %> |
 <%= link_to 'Back', tenant_ofs_path %>
