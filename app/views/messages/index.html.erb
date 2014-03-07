@@ -21,7 +21,7 @@
         <td><%= link_to message.title, message_path(message) %></td>
         <td><%= message.message %></td>
         <td><%= message.message_type %></td>
-        <td><%= message.User.first_name %> <%= message.User.last_name %></td>
+        <td><%= message.user.first_name %> <%= message.user.last_name %></td>
        <!-- <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
