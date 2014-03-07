@@ -4,11 +4,6 @@ class TenantOfsController < ApplicationController
   # GET /tenant_ofs
   def index
     @tenant_ofs = TenantOf.all
-    
-  end
-
-  # GET /tenant_ofs/1
-  def show
   end
 
   # GET /tenant_ofs/new
