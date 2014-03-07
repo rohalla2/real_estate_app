@@ -11,25 +11,29 @@
 
   <tbody>
     <% @tenant_ofs.each do |tenant_of| %>
-      <tr>
-        <td><%= 
-          User.find_by(id: tenant_of.User_id).first_name + " " +
-          User.find_by(id: tenant_of.User_id).last_name
-         %></td>
-         <td><%=
-          Property.find_by(id: tenant_of.Property_id).name
-         %></td>
-   
-         <!-- original show link -->
-       <!--  <td><%= link_to 'Show', tenant_of %></td> -->
-        
-        <td> <a class="pull-right btn btn-large btn-info" href="../tenant_ofs/<%= tenant_of.id %>/?propertyID=<%= @property %>" role="button"> Display Contact Information</a>
-        </td> 
-        <td><%= link_to 'Remove Tenant From Property', tenant_of, class: 'pull-right btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-      </tr>
+      <% if @property.to_i == tenant_of.Property.id.to_i  %>
+        <tr>
+          <td><%= 
+            User.find_by(id: tenant_of.User_id).first_name + " " +
+            User.find_by(id: tenant_of.User_id).last_name
+           %></td>
+           <td><%=
+            Property.find_by(id: tenant_of.Property_id).name
+           %></td>
+     
+           <!-- original show link -->
+         <!--  <td><%= link_to 'Show', tenant_of %></td> -->
+          
+          <td> <a class="pull-right btn btn-large btn-info" href="../tenant_ofs/<%= tenant_of.id %>/?propertyID=<%= @property %>" role="button"> Display Contact Information</a>
+          </td> 
+          <td><%= link_to 'Remove Tenant From Property', tenant_of, class: 'pull-right btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+        </tr>
+      <% end %> 
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+<a class="btn btn-large btn-info" href="../properties/<%= @property %>" role="button"> back</a>
 
