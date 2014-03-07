@@ -9,10 +9,6 @@
 
     <p class="lead"><strong>Email: </strong><%= @tenant.email %></p>
     <p class="lead"><strong>Phone Number: </strong><%= @tenant.phone_number %></p>
-
-
-
-	<%= link_to 'Remove Tenant', @tenant, class: 'btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> |
 	<a class="btn btn-large btn-info" href="..?propertyID=<%= @property %>" role="button"> back</a>
  </div>
 

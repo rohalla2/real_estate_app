@@ -22,10 +22,6 @@ class TenantOfsController < ApplicationController
     @property_id = params["propertyID"]
   end
 
-  # GET /tenant_ofs/1/edit
-  def edit
-  end
-
   # POST /tenant_ofs
   def create
     @tenant_of = TenantOf.new
@@ -35,20 +31,12 @@ class TenantOfsController < ApplicationController
     @tenant_of.User_id = user.id
     @tenant_of.Property_id = property_id
 
+    #REDIRECT NOT WORKING CORRECTLY - NEEDS ADDITIONAL WORK
     if @tenant_of.save
-      redirect_to @tenant_of, notice: 'Tenant of was successfully created.'
+      redirect_to "tenant_ofs?propertyID=#{property_id}", notice: 'Tenant of was successfully created.'
     else
       render action: 'new'
-    end
-  end
-
-  # PATCH/PUT /tenant_ofs/1
-  def update
-    if @tenant_of.update(tenant_of_params)
-      redirect_to @tenant_of, notice: 'Tenant of was successfully updated.'
-    else
-      render action: 'edit'
-    end
+    end 
   end
 
   # DELETE /tenant_ofs/1
