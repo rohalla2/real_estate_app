@@ -17,6 +17,8 @@ RealEstateApp::Application.routes.draw do
 
   resources :properties
 
+  resources :tenant_ofs
+
   root 'static_pages#home'
   get "static_pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
