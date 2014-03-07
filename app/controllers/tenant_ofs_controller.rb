@@ -4,6 +4,7 @@ class TenantOfsController < ApplicationController
   # GET /tenant_ofs
   def index
     @tenant_ofs = TenantOf.all
+    
   end
 
   # GET /tenant_ofs/1
@@ -49,6 +50,7 @@ class TenantOfsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_tenant_of
       @tenant_of = TenantOf.find(params[:id])
+      @property = params["propertyID"]
     end
 
     # Only allow a trusted parameter "white list" through.
