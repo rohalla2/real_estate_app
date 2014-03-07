@@ -32,21 +32,22 @@
       <li><a href="/properties">Properties</a></li>
       
     </ul>
-      <% if session[:user_id].nil? %>
+      <% if @user.nil? %>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Sign Up", new_user_path %></li>
         </ul>
         <%= render 'sessions/form' %>
+
+      <% else %>
+        <%= button_to 'Logout', logout_path, class: "btn btn-danger pull-right", method: :delete %>
+        <%= link_to 'Your Profile', user_path(@user), class: "btn btn-success pull-right" %>
       <% end %>    
   </div>
     
 <div class="container">
-    <% if session[:user_id] %>
-      <% u = User.find(session[:user_id]) %>
-      <%= button_to 'Logout', logout_path, class: "btn btn-danger pull-right", method: :delete %>
-      <%= link_to 'Your Profile', user_path(u), class: "btn btn-success pull-right" %>
+    <% if @user %>
       <p class="lead">
-        <%= "Welcome, #{u.first_name}" %>
+        <%= "Welcome, #{@user.first_name}" %>
       </p>
     <% end %>
 
