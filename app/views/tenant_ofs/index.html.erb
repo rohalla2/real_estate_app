@@ -11,7 +11,7 @@
 
   <tbody>
     <% @tenant_ofs.each do |tenant_of| %>
-      <% if @property.to_i == tenant_of.Property.id.to_i  %>
+      <% if @property.to_i == tenant_of.Property_id.to_i  %>
         <tr>
           <td><%= 
             User.find_by(id: tenant_of.User_id).first_name + " " +
@@ -26,7 +26,7 @@
           
           <td> <a class="pull-right btn btn-large btn-info" href="../tenant_ofs/<%= tenant_of.id %>/?propertyID=<%= @property %>" role="button"> Display Contact Information</a>
           </td> 
-          <td><%= link_to 'Remove Tenant From Property', tenant_of, class: 'pull-right btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+          <td><%= link_to 'Remove Tenant From Property', "../tenant_ofs/#{tenant_of.id}/?propertyID=#{@property}", class: 'pull-right btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> </td>
         </tr>
       <% end %> 
     <% end %>
