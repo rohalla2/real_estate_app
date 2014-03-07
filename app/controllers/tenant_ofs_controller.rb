@@ -32,7 +32,6 @@ class TenantOfsController < ApplicationController
     @tenant_of.User_id = user.id
     @tenant_of.Property_id = @property_id
 
-    #REDIRECT NOT WORKING CORRECTLY - NEEDS ADDITIONAL WORK
     if @tenant_of.save
       redirect_to property_path(@property_id), notice: 'Tenant of was successfully created.'
     else
@@ -43,8 +42,8 @@ class TenantOfsController < ApplicationController
   # DELETE /tenant_ofs/1
   def destroy
     @tenant_of.destroy
-    #NEED TO REDIRECT SO THE PROPERTY ID FOLLOWS THROUGH
-    redirect_to "/tenant_ofs/?propertyID=#{@property_id}", notice: 'Tenant of was successfully destroyed.'
+    redirect_to :back, notice: 'Tenant was removed.'
+
 
   end
 
