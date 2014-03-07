@@ -1,0 +1,25 @@
+<h1>Listing tenant_ofs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tenant_ofs.each do |tenant_of| %>
+      <tr>
+        <td><%= link_to 'Show', tenant_of %></td>
+        <td><%= link_to 'Edit', edit_tenant_of_path(tenant_of) %></td>
+        <td><%= link_to 'Destroy', tenant_of, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tenant of', new_tenant_of_path %>
