@@ -76,7 +76,7 @@
         <!-- Displays all properties user manages -->
         <% @properties.each do |property| %>
           <% if property.user_id == @user.id %>
-            <tr class="clickableRow" href="<%= property_path(property) %>">
+            <tr class="clickableRow" href="<%= property_path(property.id) %>">
               <td><%= property.is_available %></td>
               <td><%= property.beds %></td>
               <td><%= property.baths %></td>
@@ -91,7 +91,7 @@
         <% @tenant_ofs.each do |tenant| %>
           <% if tenant.User_id == @user.id %>
             <% currproperty = @properties.find_by(id: tenant.Property_id)  %>
-            <tr class="clickableRow" href= "/properties/#{tenant.Property_id}">
+            <tr class="clickableRow" href= "/properties/<%= tenant.Property_id %>">
               <td><%= currproperty.is_available %></td>
               <td><%= currproperty.beds %></td>
               <td><%= currproperty.baths %></td>
