@@ -10,8 +10,8 @@ class TenantOfsController < ApplicationController
 
    # GET /tenant_ofs/1
   def show
-    @tenant_id = TenantOf.find_by(id: params[:id])   
-    @tenant = User.find_by(id: @tenant_id.User_id) #identifies who the user is for the show page
+    tenant_id = TenantOf.find_by(id: params[:id])   
+    @tenant = User.find_by(id: tenant_id.User_id) #identifies who the user is for the show page
     @property = params["propertyID"]
   end
 
@@ -19,9 +19,8 @@ class TenantOfsController < ApplicationController
   # GET /tenant_ofs/new
   def new
     @tenant_of = TenantOf.new
+    @property_id = params["propertyID"]
   end
-
-
 
   # GET /tenant_ofs/1/edit
   def edit
@@ -29,7 +28,12 @@ class TenantOfsController < ApplicationController
 
   # POST /tenant_ofs
   def create
-    @tenant_of = TenantOf.new(tenant_of_params)
+    @tenant_of = TenantOf.new
+    email = params["email"].downcase
+    property_id = params["property_id"]
+    user = User.find_by(email: email)
+    @tenant_of.User_id = user.id
+    @tenant_of.Property_id = property_id
 
     if @tenant_of.save
       redirect_to @tenant_of, notice: 'Tenant of was successfully created.'
