@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = @user.messages_received.all
   end
 
   # GET /messages/1
@@ -57,11 +56,12 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
-    @message.destroy
-    respond_to do |format|
-      format.html { redirect_to messages_url }
-      format.json { head :no_content }
-    end
+    redirect_to messages_url, notice: "You cannot delete this message."
+    # @message.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to messages_url }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

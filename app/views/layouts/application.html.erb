@@ -30,7 +30,9 @@
       </div>
     <ul class="nav navbar-nav">
       <li><a href="/properties">Properties</a></li>
-      
+      <% if @user %>
+        <li><%= link_to "Messages", messages_path %></li>
+      <% end %>
     </ul>
       <% if @user.nil? %>
         <ul class="nav navbar-nav navbar-right">
