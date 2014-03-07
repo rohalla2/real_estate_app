@@ -415,8 +415,8 @@ all_Message = [
 :message => "Hey, my sink broke, so you could you like fix it dude",
 :message_type => "UTIL",
 :User_id => "4",
-:created_at => "3/2/2014 12:10:40 PM",
-:updated_at => "3/2/2014 12:10:40 PM"
+:created_at => "3/3/2014 7:09:00 PM",
+:updated_at => "3/3/2014 7:09:00 PM"
 
  }, 
 {
@@ -424,8 +424,8 @@ all_Message = [
 :message => "Yea, I'll take care of it Tuesday",
 :message_type => "UTIL",
 :User_id => "1",
-:created_at => "3/3/2014 12:10:40 PM",
-:updated_at => "3/3/2014 12:10:40 PM"
+:created_at => "3/4/2014 7:09:00 PM",
+:updated_at => "3/4/2014 7:09:00 PM"
 
  }, 
 {
@@ -433,8 +433,8 @@ all_Message = [
 :message => "Thanks",
 :message_type => "UTIL",
 :User_id => "4",
-:created_at => "3/4/2014 12:10:40 PM",
-:updated_at => "3/4/2014 12:10:40 PM"
+:created_at => "3/5/2014 7:09:00 PM",
+:updated_at => "3/5/2014 7:09:00 PM"
 
  }, 
 {
@@ -442,8 +442,8 @@ all_Message = [
 :message => "Its complete, let me know if there is any problems",
 :message_type => "UTIL",
 :User_id => "1",
-:created_at => "3/5/2014 12:10:40 PM",
-:updated_at => "3/5/2014 12:10:40 PM"
+:created_at => "3/6/2014 7:09:00 PM",
+:updated_at => "3/6/2014 7:09:00 PM"
 
  }, 
 {
@@ -451,8 +451,8 @@ all_Message = [
 :message => "Rent is due in three days",
 :message_type => "RENT",
 :User_id => "2",
-:created_at => "3/3/2014 12:10:40 PM",
-:updated_at => "3/3/2014 12:10:40 PM"
+:created_at => "3/4/2014 7:09:00 PM",
+:updated_at => "3/4/2014 7:09:00 PM"
 
  }, 
 {
@@ -460,8 +460,8 @@ all_Message = [
 :message => "I'm going to be a bit late.. Sorry",
 :message_type => "RENT",
 :User_id => "6",
-:created_at => "3/4/2014 12:10:40 PM",
-:updated_at => "3/4/2014 12:10:40 PM"
+:created_at => "3/5/2014 7:09:00 PM",
+:updated_at => "3/5/2014 7:09:00 PM"
 
  }, 
 {
@@ -469,8 +469,8 @@ all_Message = [
 :message => "check your account, its in there",
 :message_type => "RENT",
 :User_id => "7",
-:created_at => "3/5/2014 12:10:40 PM",
-:updated_at => "3/5/2014 12:10:40 PM"
+:created_at => "3/6/2014 7:09:00 PM",
+:updated_at => "3/6/2014 7:09:00 PM"
 
  } 
  ]
@@ -539,7 +539,7 @@ all_Application = [
 
  } 
  ]
-all_Receives = [ 
+all_Recipient = [ 
 { 
 :User_id => "1",
 :Message_id => "1"
@@ -670,7 +670,7 @@ User.destroy_all
 TenantOf.destroy_all
 Message.destroy_all
 Application.destroy_all
-Receives.destroy_all
+Recipient.destroy_all
 Payment.destroy_all
 
 nC = 1
@@ -756,11 +756,11 @@ nC += 1
 end
 
 nC = 1
-all_Receives.each do |all| 
-n = Receives.new
-n.id = nC
-n.User_id = all[:User_id]
-n.Message_id = all[:Message_id]
+all_Recipient.each do |all| 
+n = Recipient.new
+#n.id = nC
+n.user_id = all[:User_id]
+n.message_id = all[:Message_id]
 n.save
 nC += 1
 end

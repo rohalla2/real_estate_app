@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 	has_many :properties
-	has_many :messages
+	has_many :messages_sent, class_name: "Message"
+	has_many :recipients
+	has_many :messages_received, through: :recipients, source: "message"
+
 	before_validation :downcase_username
 	before_create :downcase_username
 

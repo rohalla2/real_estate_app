@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305175134) do
+ActiveRecord::Schema.define(version: 20140307004643) do
 
   create_table "applications", force: true do |t|
     t.integer  "User_id"
@@ -71,14 +71,14 @@ ActiveRecord::Schema.define(version: 20140305175134) do
     t.date     "date_available"
   end
 
-  create_table "receives", force: true do |t|
-    t.integer  "User_id"
-    t.integer  "Message_id"
+  create_table "recipients", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "message_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "receives", ["User_id"], name: "index_receives_on_User_id"
+  add_index "recipients", ["user_id"], name: "index_recipients_on_user_id"
 
   create_table "tenant_ofs", force: true do |t|
     t.integer  "User_id"
