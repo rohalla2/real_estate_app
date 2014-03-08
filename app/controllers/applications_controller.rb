@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_manager
+  #before_action :check_if_manager
 
 
   # GET /applications

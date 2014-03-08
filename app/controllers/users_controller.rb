@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    redirect_to properties_path, notice: "Not authorized"
   end
 
   # GET /users/1
