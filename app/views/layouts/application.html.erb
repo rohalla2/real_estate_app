@@ -42,7 +42,9 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Sign Up", new_user_path %></li>
         </ul>
-        <%= render 'sessions/form' %>
+        <div class="navbar-form navbar-right">
+          <%= render 'sessions/form' %>
+        </div>
 
       <% else %>
         <%= button_to 'Logout', logout_path, class: "btn btn-danger pull-right", method: :delete %>

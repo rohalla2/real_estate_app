@@ -28,8 +28,19 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user_id = @user.id
 
+    #try to find users in :to param
+    to_users_emails = params[:to].split(" ")
+    
+    if to_users_emails.size == 0
+      @message.errors.add(:to, "field cannot be empty")
+    else
+      validate_email_addresses(to_users_emails)
+    end
+
+
     respond_to do |format|
-      if @message.save
+      if @message.errors.count == 0 && @message.save
+        send_message_to_recipients(to_users_emails, @message.id)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render action: 'show', status: :created, location: @message }
       else
@@ -43,15 +54,6 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1.json
   def update
     redirect_to messages_url, notice: "You cannot edit a message after it is sent."
-    # respond_to do |format|
-    #   if @message.update(message_params)
-    #     format.html { redirect_to @message, notice: 'Message was successfully updated.' }
-    #     format.json { head :no_content }
-    #   else
-    #     format.html { render action: 'edit' }
-    #     format.json { render json: @message.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /messages/1
@@ -75,4 +77,27 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:title, :message, :message_type)
     end
+
+    def validate_email_addresses(email_addresses)
+      email_addresses.each do |email|
+        email.downcase!
+        temp = nil
+        temp = User.find_by(email: email)
+        if temp.nil?
+          @message.errors.add(:to, " value #{email} does not correspond to any user")
+        end
+      end
+
+    end
+
+    def send_message_to_recipients (emails, message_id)
+      emails.each do |email|
+        email.downcase!
+        rec = Recipient.new
+        rec.user_id = User.find_by(email: email).id
+        rec.message_id = message_id
+        rec.save
+      end
+    end
+
 end
