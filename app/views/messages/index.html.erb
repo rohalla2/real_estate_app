@@ -18,11 +18,10 @@
     <% @user.messages_received.each do |message| %>
       <tr class="clickableRow" href="<%= message_path(message) %>">
         <td><%= message.created_at %></td>
-        <td><%= link_to message.title, message_path(message) %></td>
+        <td><%= message.title %></td>
         <td><%= message.message %></td>
         <td><%= message.message_type %></td>
         <td><%= message.user.first_name %> <%= message.user.last_name %></td>
-       <!-- <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -52,11 +51,10 @@
         <td><%= message.message %></td>
         <td><%= message.message_type %></td>
         <% if message.users_to.count == 1 %>
-          <td> <%= message.users_to.first.first_name %> <%= message.users_to.first.first_name %></td>
+          <td> <%= message.users_to.first.first_name %> <%= message.users_to.first.last_name %></td>
         <% else %>
-          <td> <%= link_to "Multiple", messages_path(message) %> </td>
+          <td> <%= link_to "Multiple", message_path(message) %> </td>
         <% end %> 
-        <!--<td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

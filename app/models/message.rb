@@ -3,4 +3,6 @@ class Message < ActiveRecord::Base
   has_many :recipients
   has_many :users_to, through: :recipients, source: "user"
 
+  validates :title, :message, :message_type, presence: true
+
 end
