@@ -72,7 +72,7 @@
 
     <tbody>
 
-      <% if @user.user_type = "Manager" %>
+      <% if @user.user_type == "Manager" %>
         <!-- Displays all properties user manages -->
         <% @properties.each do |property| %>
           <% if property.user_id == @user.id %>
@@ -90,7 +90,7 @@
         <!-- Displays all properties user is tenant of -->
         <% @tenant_ofs.each do |tenant| %>
           <% if tenant.User_id == @user.id %>
-            <% currproperty = @properties.find_by(id: tenant.Property_id)  %>
+            <% currproperty = Property.find_by(id: tenant.Property_id)  %>
             <tr class="clickableRow" href= "/properties/<%= tenant.Property_id %>">
               <td><%= currproperty.is_available %></td>
               <td><%= currproperty.beds %></td>
