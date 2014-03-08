@@ -747,8 +747,8 @@ nC = 1
 all_Application.each do |all| 
 n = Application.new
 n.id = nC
-n.User_id = all[:User_id]
-n.Property_id = all[:Property_id]
+n.user_id = all[:User_id]
+n.property_id = all[:Property_id]
 n.price_offer = all[:price_offer]
 n.conditions = all[:conditions]
 n.save

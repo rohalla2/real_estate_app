@@ -15,8 +15,8 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr class="clickableRow" href= "<%= applications_path(application) %>">
-        <td><%= application.User.first_name + " " + application.User.last_name %></td>
-        <td><%= application.Property.name %></td>
+        <td><%= application.user.first_name + " " + application.user.last_name %></td>
+        <td><%= application.property.name %></td>
         <td><%= number_to_currency(application.price_offer) %></td>
         <td><%= link_to 'Show', application %></td>
         <td><%= link_to 'Edit', edit_application_path(application) %></td>

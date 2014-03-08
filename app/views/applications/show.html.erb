@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% property = Property.find_by(id: @application.Property_id) %>       
+<% property = Property.find_by(id: @application.property_id) %>       
 
 <p>
   <strong>Date/Time:</strong>
@@ -9,7 +9,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @application.User.first_name + " " + @application.User.last_name %>
+  <%= @application.user.first_name + " " + @application.user.last_name %>
 </p>
 
 <p>

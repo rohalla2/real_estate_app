@@ -33,8 +33,8 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(application_params)
     property_id = params["property_id"]
-    @application.User_id = @user.id
-    @application.Property_id = property_id
+    @application.user_id = @user.id
+    @application.property_id = property_id
 
     respond_to do |format|
       if @application.save

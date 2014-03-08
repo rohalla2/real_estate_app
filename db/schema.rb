@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307023610) do
+ActiveRecord::Schema.define(version: 20140308214549) do
 
   create_table "applications", force: true do |t|
-    t.integer  "User_id"
-    t.integer  "Property_id"
+    t.integer  "user_id"
+    t.integer  "property_id"
     t.float    "price_offer"
     t.text     "conditions"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "applications", ["Property_id"], name: "index_applications_on_Property_id"
-  add_index "applications", ["User_id"], name: "index_applications_on_User_id"
+  add_index "applications", ["property_id"], name: "index_applications_on_property_id"
+  add_index "applications", ["user_id"], name: "index_applications_on_user_id"
 
   create_table "messages", force: true do |t|
     t.string   "title"
