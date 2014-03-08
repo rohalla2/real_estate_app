@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<% property = Property.find_by(id: @application.Property_id) %>       
+
 <p>
-  <strong>User:</strong>
-  <%= @application.User %>
+  <strong>Date/Time:</strong>
+  <%= @application.updated_at %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @application.User.first_name + " " + @application.User.last_name %>
 </p>
 
 <p>
   <strong>Property:</strong>
-  <%= @application.Property %>
+  <%= property.name %>
 </p>
 
 <p>

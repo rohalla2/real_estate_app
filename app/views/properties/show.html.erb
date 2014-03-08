@@ -15,6 +15,8 @@
   <!-- Needs to be updated to only show for the tenant -->
   <% if true %>
     <%= link_to 'New Payment', new_payment_path(propertyID: @property), class: 'pull-right btn btn-large btn-primary'%>
+    <%= link_to 'Submit Application', new_application_path(propertyID: @property), class: 'pull-right btn btn-large btn-info'%>
+
   <% end if %>
 
 
