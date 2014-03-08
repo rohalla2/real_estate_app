@@ -17,7 +17,9 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/new
   def new
+    @property_id = params["propertyID"]
     @application = Application.new
+
   end
 
   # GET /applications/1/edit
@@ -28,6 +30,9 @@ class ApplicationsController < ApplicationController
   # POST /applications.json
   def create
     @application = Application.new(application_params)
+    property_id = params["property_id"]
+    @application.User_id = @user.id
+    @application.Property_id = property_id
 
     respond_to do |format|
       if @application.save

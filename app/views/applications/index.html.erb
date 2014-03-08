@@ -17,18 +17,20 @@
       <tr class="clickableRow" href= "<%= applications_path(application) %>">
         <!-- Find the properties name -->
         <% property = Property.find_by(id: application.Property_id) %>       
+        <% manager = User.find_by(id: property.user_id ) %>
 
-        <td><%= application.User.first_name + " " + application.User.last_name %></td>
-        <td><%= property.name %></td>
-        <td><%= application.price_offer %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- Only display if user received applicaation or sent application -->
+        <% if manager.id == @user.id || application.User_id == @user.id %>
+            <td><%= application.User.first_name + " " + application.User.last_name %></td>
+            <td><%= property.name %></td>
+            <td><%= application.price_offer %></td>
+            <td><%= link_to 'Show', application %></td>
+            <td><%= link_to 'Edit', edit_application_path(application) %></td>
+            <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Application', new_application_path %>

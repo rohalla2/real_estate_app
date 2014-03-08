@@ -12,20 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :User_id %><br>
-    <%= f.text_field :User_id %>
-  </div>
-  <div class="field">
-    <%= f.label :Property_id %><br>
-    <%= f.text_field :Property_id %>
-  </div>
-  <div class="field">
     <%= f.label :price_offer %><br>
     <%= f.text_field :price_offer %>
   </div>
   <div class="field">
     <%= f.label :conditions %><br>
     <%= f.text_area :conditions %>
+  </div>
+  <div class="field">
+    <input type="hidden" value="<%= @property_id %>" name="property_id" id="property_id">
   </div>
   <div class="actions">
     <%= f.submit %>
