@@ -6,7 +6,9 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    applied_to = @user.applications
+    applications_received = @user.properties.flat_map(&:applications)
+    @applications = applied_to + applications_received.sort_by(&:created_at)
   end
 
   # GET /applications/1
