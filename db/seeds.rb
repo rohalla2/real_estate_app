@@ -768,13 +768,15 @@ end
 nC = 1
 all_Payment.each do |all| 
 n = Payment.new
-n.id = nC
+
 n.user_id = all[:user_id]
 n.property_id = all[:property_id]
 n.amount = all[:amount]
 n.bank_routing_number = all[:bank_routing_number]
 n.bank_account_number = all[:bank_account_number]
 n.account_type = all[:account_type]
+n.save
+n.id = nC
 n.save
 nC += 1
 end
