@@ -415,8 +415,8 @@ all_Message = [
 :message => "Hey, my sink broke, so you could you like fix it dude",
 :message_type => "UTIL",
 :user_id => "4",
-:created_at => "3/3/2014 8:46:28 PM",
-:updated_at => "3/3/2014 8:46:28 PM"
+:created_at => "3/6/2014 1:40:56 PM",
+:updated_at => "3/6/2014 1:40:56 PM"
 
  }, 
 {
@@ -424,8 +424,8 @@ all_Message = [
 :message => "Yea, I'll take care of it Tuesday",
 :message_type => "UTIL",
 :user_id => "1",
-:created_at => "3/4/2014 8:46:28 PM",
-:updated_at => "3/4/2014 8:46:28 PM"
+:created_at => "3/7/2014 1:40:56 PM",
+:updated_at => "3/7/2014 1:40:56 PM"
 
  }, 
 {
@@ -433,8 +433,8 @@ all_Message = [
 :message => "Thanks",
 :message_type => "UTIL",
 :user_id => "4",
-:created_at => "3/5/2014 8:46:28 PM",
-:updated_at => "3/5/2014 8:46:28 PM"
+:created_at => "3/8/2014 1:40:56 PM",
+:updated_at => "3/8/2014 1:40:56 PM"
 
  }, 
 {
@@ -442,8 +442,8 @@ all_Message = [
 :message => "Its complete, let me know if there is any problems",
 :message_type => "UTIL",
 :user_id => "1",
-:created_at => "3/6/2014 8:46:28 PM",
-:updated_at => "3/6/2014 8:46:28 PM"
+:created_at => "3/9/2014 1:40:56 PM",
+:updated_at => "3/9/2014 1:40:56 PM"
 
  }, 
 {
@@ -451,8 +451,8 @@ all_Message = [
 :message => "Rent is due in three days",
 :message_type => "RENT",
 :user_id => "2",
-:created_at => "3/4/2014 8:46:28 PM",
-:updated_at => "3/4/2014 8:46:28 PM"
+:created_at => "3/7/2014 1:40:56 PM",
+:updated_at => "3/7/2014 1:40:56 PM"
 
  }, 
 {
@@ -460,8 +460,8 @@ all_Message = [
 :message => "I'm going to be a bit late.. Sorry",
 :message_type => "RENT",
 :user_id => "6",
-:created_at => "3/5/2014 8:46:28 PM",
-:updated_at => "3/5/2014 8:46:28 PM"
+:created_at => "3/8/2014 1:40:56 PM",
+:updated_at => "3/8/2014 1:40:56 PM"
 
  }, 
 {
@@ -469,71 +469,71 @@ all_Message = [
 :message => "check your account, its in there",
 :message_type => "RENT",
 :user_id => "7",
-:created_at => "3/6/2014 8:46:28 PM",
-:updated_at => "3/6/2014 8:46:28 PM"
+:created_at => "3/9/2014 1:40:56 PM",
+:updated_at => "3/9/2014 1:40:56 PM"
 
  } 
  ]
 all_Application = [ 
 { 
-:User_id => "4",
-:Property_id => "1",
+:user_id => "4",
+:property_id => "1",
 :price_offer => "2300",
 :conditions => ""
 
  }, 
 {
-:User_id => "5",
-:Property_id => "2",
+:user_id => "5",
+:property_id => "2",
 :price_offer => "2100",
 :conditions => ""
 
  }, 
 {
-:User_id => "6",
-:Property_id => "3",
+:user_id => "6",
+:property_id => "3",
 :price_offer => "700",
 :conditions => ""
 
  }, 
 {
-:User_id => "7",
-:Property_id => "4",
+:user_id => "7",
+:property_id => "4",
 :price_offer => "2500",
 :conditions => ""
 
  }, 
 {
-:User_id => "8",
-:Property_id => "5",
+:user_id => "8",
+:property_id => "5",
 :price_offer => "699",
 :conditions => ""
 
  }, 
 {
-:User_id => "9",
-:Property_id => "4",
+:user_id => "9",
+:property_id => "4",
 :price_offer => "2500",
 :conditions => ""
 
  }, 
 {
-:User_id => "10",
-:Property_id => "5",
+:user_id => "10",
+:property_id => "5",
 :price_offer => "699",
 :conditions => ""
 
  }, 
 {
-:User_id => "4",
-:Property_id => "2",
+:user_id => "4",
+:property_id => "2",
 :price_offer => "2400",
 :conditions => ""
 
  }, 
 {
-:User_id => "4",
-:Property_id => "3",
+:user_id => "4",
+:property_id => "3",
 :price_offer => "1900",
 :conditions => ""
 
@@ -541,43 +541,43 @@ all_Application = [
  ]
 all_Recipient = [ 
 { 
-:User_id => "1",
-:Message_id => "1"
+:user_id => "1",
+:message_id => "1"
 
  }, 
 {
-:User_id => "4",
-:Message_id => "2"
+:user_id => "4",
+:message_id => "2"
 
  }, 
 {
-:User_id => "1",
-:Message_id => "3"
+:user_id => "1",
+:message_id => "3"
 
  }, 
 {
-:User_id => "4",
-:Message_id => "4"
+:user_id => "4",
+:message_id => "4"
 
  }, 
 {
-:User_id => "6",
-:Message_id => "5"
+:user_id => "6",
+:message_id => "5"
 
  }, 
 {
-:User_id => "7",
-:Message_id => "5"
+:user_id => "7",
+:message_id => "5"
 
  }, 
 {
-:User_id => "2",
-:Message_id => "6"
+:user_id => "2",
+:message_id => "6"
 
  }, 
 {
-:User_id => "2",
-:Message_id => "7"
+:user_id => "2",
+:message_id => "7"
 
  } 
  ]
@@ -676,7 +676,6 @@ Payment.destroy_all
 nC = 1
 all_Property.each do |all| 
 n = Property.new
-n.id = nC
 n.name = all[:name]
 n.description = all[:description]
 n.beds = all[:beds]
@@ -694,13 +693,14 @@ n.user_id = all[:user_id]
 n.date_available = all[:date_available]
 n.is_available = all[:is_available]
 n.save
+n.id = nC
+n.save
 nC += 1
 end
 
 nC = 1
 all_User.each do |all| 
 n = User.new
-n.id = nC
 n.first_name = all[:first_name]
 n.last_name = all[:last_name]
 n.password = all[:password]
@@ -715,16 +715,19 @@ n.user_type = all[:user_type]
 n.phone_number = all[:phone_number]
 n.website = all[:website]
 n.save
+n.id = nC
+n.save
 nC += 1
 end
 
 nC = 1
 all_TenantOf.each do |all| 
 n = TenantOf.new
-n.id = nC
 n.User_id = all[:User_id]
 n.Property_id = all[:Property_id]
 n.is_active = all[:is_active]
+n.save
+n.id = nC
 n.save
 nC += 1
 end
@@ -732,7 +735,6 @@ end
 nC = 1
 all_Message.each do |all| 
 n = Message.new
-n.id = nC
 n.title = all[:title]
 n.message = all[:message]
 n.message_type = all[:message_type]
@@ -740,17 +742,20 @@ n.user_id = all[:user_id]
 n.created_at = all[:created_at]
 n.updated_at = all[:updated_at]
 n.save
+n.id = nC
+n.save
 nC += 1
 end
 
 nC = 1
 all_Application.each do |all| 
 n = Application.new
-n.id = nC
-n.user_id = all[:User_id]
-n.property_id = all[:Property_id]
+n.user_id = all[:user_id]
+n.property_id = all[:property_id]
 n.price_offer = all[:price_offer]
 n.conditions = all[:conditions]
+n.save
+n.id = nC
 n.save
 nC += 1
 end
@@ -758,9 +763,10 @@ end
 nC = 1
 all_Recipient.each do |all| 
 n = Recipient.new
+n.user_id = all[:user_id]
+n.message_id = all[:message_id]
+n.save
 n.id = nC
-n.user_id = all[:User_id]
-n.message_id = all[:Message_id]
 n.save
 nC += 1
 end
@@ -768,13 +774,14 @@ end
 nC = 1
 all_Payment.each do |all| 
 n = Payment.new
-n.id = nC
 n.user_id = all[:user_id]
 n.property_id = all[:property_id]
 n.amount = all[:amount]
 n.bank_routing_number = all[:bank_routing_number]
 n.bank_account_number = all[:bank_account_number]
 n.account_type = all[:account_type]
+n.save
+n.id = nC
 n.save
 nC += 1
 end
