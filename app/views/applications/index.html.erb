@@ -14,7 +14,7 @@
 
   <tbody>
     <% @applications.each do |application| %>
-      <tr class="clickableRow" href= "<%= applications_path(application) %>">
+      <tr class="clickableRow" href= "<%= application_path(application) %>">
         <td><%= application.user.first_name + " " + application.user.last_name %></td>
         <td><%= application.property.name %></td>
         <td><%= number_to_currency(application.price_offer) %></td>
@@ -27,3 +27,11 @@
 </table>
 
 <br>
+
+<script>
+$(document).ready(function($) {
+      $(".clickableRow").click(function() {
+            window.document.location = $(this).attr("href");
+      });
+});
+</script>

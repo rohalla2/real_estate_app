@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<% property = Property.find_by(id: @application.property_id) %>       
-
 <p>
   <strong>Date/Time:</strong>
   <%= @application.updated_at %>
@@ -14,7 +10,7 @@
 
 <p>
   <strong>Property:</strong>
-  <%= property.name %>
+  <%= @application.property.name %>
 </p>
 
 <p>
