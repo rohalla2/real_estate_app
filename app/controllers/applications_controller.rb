@@ -8,7 +8,8 @@ class ApplicationsController < ApplicationController
   def index
     applied_to = @user.applications
     applications_received = @user.properties.flat_map(&:applications)
-    @applications = applied_to + applications_received.sort_by(&:created_at)
+    temp = applied_to + applications_received
+    @applications = temp.sort_by(&:created_at)
   end
 
   # GET /applications/1
@@ -19,6 +20,9 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/new
   def new
+    if @user.nil?
+      redirect_to login_path, notice: "You must log in to apply to a property!"
+    end
     @property_id = params["propertyID"]
     @application = Application.new
 

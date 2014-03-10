@@ -2,26 +2,15 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :check_if_manager, only: [:new, :create, :edit, :destroy, :update]
   
-  #Restrict only allowing Manager's can create new properties
-  def check_if_manager
-    if (!@user) || (@user && @user.user_type != "Manager") #if user is not logged in, or a logged in user is not a manager
-      redirect_to properties_path, notice: "Only Managers are authorized to perform this function" 
-    end
-  end
-
-
-
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all    
+    @properties = Property.all 
   end
 
   # GET /properties/1
   # GET /properties/1.json
   def show
-    property_id = params[:id]
-    @property = Property.find_by(id: property_id)
     @manager_id = @property.user_id
   end
 
@@ -32,6 +21,9 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
+    if @property.user.id != @user.id
+      redirect_to properties_path, notice:"Not authorized"
+    end
   end
 
   # POST /properties
@@ -54,6 +46,9 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update
+    if @property.user.id != @user.id
+      redirect_to properties_path, notice:"Not authorized"
+    end
     respond_to do |format|
       if @property.update(property_params)
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
@@ -68,6 +63,9 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1
   # DELETE /properties/1.json
   def destroy
+    if @property.user.id != @user.id
+      redirect_to properties_path, notice:"Not authorized"
+    end
     @property.destroy
     respond_to do |format|
       format.html { redirect_to properties_url }

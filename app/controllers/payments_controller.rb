@@ -4,13 +4,15 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.json
   def index
-    @payments = Payment.all
+    sent = @user.payments
+    received = @user.properties.flat_map(&:payments)
+    temp = sent + received
+    @payments = temp.sort_by(&:created_at)
   end
 
   # GET /payments/1
   # GET /payments/1.json
   def show
-    @payments = Payment.all
   end
 
   # GET /payments/new

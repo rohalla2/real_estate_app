@@ -1,9 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
-<% property = Property.find_by(id: @payment.property_id).user_id %>
-<% manager = User.find_by(id: property ) %>
-
 <p>
   <strong>Time:</strong>
   <%= @payment.updated_at %>
@@ -16,12 +10,12 @@
 
 <p>
   <strong>Manager Name:</strong>
-  <%= manager.first_name + " " + manager.last_name %>
+  <%= @payment.property.user.first_name + " " + @payment.property.user.last_name %>
 </p>
 
 <p>
   <strong>Amount:</strong>
-  <%= @payment.amount %>
+  <%= number_to_currency(@payment.amount) %>
 </p>
 
 <p>
