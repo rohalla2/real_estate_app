@@ -12,20 +12,24 @@
   <% end %>
     <div class="field">
     <%= label_tag(:to, "To") %><br>
-    <p>Seperate User's email addresses with spaces</p>
     <%= text_field_tag(:to) %>
+    <p>Seperate User's email addresses with spaces</p>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+
+  <div class="form-inline">
+    <div class="field form-group form_padding">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field form-group form_padding">
+      <%= f.label :message_type %><br>
+      <%= f.select :message_type, Message::MESSAGE_TYPES, prompt:"What kind of message is it?" %>
+    </div>
   </div>
-  <div class="field">
+
+  <div class="field form_padding">
     <%= f.label :message %><br>
     <%= f.text_area :message %>
-  </div>
-  <div class="field">
-    <%= f.label :message_type %><br>
-    <%= f.text_field :message_type %>
   </div>
 
   <div class="actions">

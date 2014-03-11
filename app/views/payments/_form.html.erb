@@ -15,17 +15,20 @@
     <%= f.label :amount %><br>
     <%= f.text_field :amount %>
   </div>
-  <div class="field">
-    <%= f.label :bank_routing_number %><br>
-    <%= f.text_field :bank_routing_number %>
-  </div>
-  <div class="field">
-    <%= f.label :bank_account_number %><br>
-    <%= f.text_field :bank_account_number %>
-  </div>
-  <div class="field">
-    <%= f.label :account_type %><br>
-    <%= f.text_field :account_type %>
+
+  <div class="form-inline">
+    <div class="field form-group form_padding">
+      <%= f.label :bank_routing_number %><br>
+      <%= f.text_field :bank_routing_number %>
+    </div>
+    <div class="field form-group form_padding">
+      <%= f.label :bank_account_number %><br>
+      <%= f.text_field :bank_account_number %>
+    </div>
+    <div class="field form-group form_padding">
+      <%= f.label :account_type %><br>
+      <%= f.select :account_type, Payment::ACCOUNT_TYPES, prompt: "What kind of account is it?" %>
+    </div>
   </div>
 
 
