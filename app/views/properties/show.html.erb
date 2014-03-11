@@ -1,23 +1,27 @@
 <div class="page-header">
 
   <!-- Manager related features - buttons -->
+  <!-- Inclues Edit Property, Delete Property, View Tenants, and Add Tenants -->
   <% if session[:user_id] == @manager_id %>
     <%= link_to "Edit This Property", edit_property_path(@property), class: 'pull-right btn btn-large btn-info' %>
     <%= link_to "Delete This Property", property_path(@property), method: 'delete', class: 'pull-right btn btn-large btn-danger' %>
-    <a class="pull-right btn btn-large btn-warning" href="../tenant_ofs?propertyID=<%= @property.id %>" role="button">
-    View Tenants</a>
-    <a class="pull-right btn btn-large btn-success" href="../tenant_ofs/new?propertyID=<%= @property.id %>" role="button">
-    Add Tenant</a>
-
+    <a class="pull-right btn btn-large btn-warning" href="../tenant_ofs?propertyID=<%= @property.id %>" role="button">View Tenants</a>
+    <a class="pull-right btn btn-large btn-success" href="../tenant_ofs/new?propertyID=<%= @property.id %>" role="button">Add Tenant</a>
   <% end if %>
 
-  <!-- Tenant related features - buttons -->
-  <!-- Needs to be updated to only show for the tenant -->
-  <% if true %>
-    <%= link_to 'New Payment', new_payment_path(propertyID: @property), class: 'pull-right btn btn-large btn-primary'%>
+  <!-- Only make payment if tenant of property and Active -->
+  <% #if @property.Tenant_ofs.user_id == @user_id && @property.Tenant_ofs.is_active = true %>
+  <% if @user.user_type == "Tenant" %>  
+    <%= link_to 'New Payment', new_payment_path(propertyID: @property), class: 'pull-right btn btn-large btn-success'%>
+  <% end if %>
+
+  <!-- Can only submit application if a tenant -->
+  <% if @user.user_type == "Tenant" %>
+    <%= mail_to @property.user.email, "Contact Manager", {subject: @property.name, class: 'pull-right btn btn-large btn-warning'} %>
     <%= link_to 'Submit Application', new_application_path(propertyID: @property), class: 'pull-right btn btn-large btn-info'%>
-
+    
   <% end if %>
+
 
 
   <h1><%= @property.name %></h1>
@@ -48,14 +52,6 @@
     <p class="lead"><strong>Laundry: </strong><%= @property.has_laundry %></p>
     <p class="lead"><strong>Parking: </strong><%= @property.has_parking %></p>
     <p class="lead"><strong>First Posted: </strong><%= @property.created_at %></p>
-
-
-
-
-
-    <%= link_to "Apply", '#' %> |
-    <!-- link to send link to the owner of the property -->
-    <%= link_to "Contact Seller", href="mailto:#{User.find_by(id: @manager_id).email}" %>
 
   </div>
 </div>

@@ -12,11 +12,16 @@
         <%= link_to property.name, property_path(property) %>
         (<%= number_to_currency(property.price) %>)
       </h2>
-      <p class="lead"><%= property.description %></p>
-        <%= link_to "Apply", new_application_path(propertyID: property.id), class: "btn btn-success"  %> |
+      <p class="lead"><%= property.description %></p>    
+        <!-- Create button for user to apply -->
+        <% if @user.user_type == "Tenant" %> 
+          <%= link_to "Apply", new_application_path(propertyID: property.id), class: "btn btn-success"  %> |
+        <% end %>
+
         <!-- link to send link to the owner of the property -->
         <%= mail_to property.user.email, "Contact Manager", {subject: property.name, class: "btn btn-default"}  %>
       </p>
+    
     </div>
   </div>    
  <% end %>
