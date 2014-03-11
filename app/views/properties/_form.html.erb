@@ -12,7 +12,7 @@
     </div>
   <% end %>
   
-  <div class="field form_padding textboxclass ">
+  <div class="field form_padding ">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -20,6 +20,17 @@
   <div class="field form_padding" >
     <%= f.label :description %><br>
     <%= f.text_area :description %>
+  </div>
+
+  <div class="form-inline">
+    <div class="field form-group form_padding">
+      <%= f.label :price %><br>
+      <%= f.text_field :price %>
+    </div>
+    <div class="field form-group form_padding"> 
+      <%= f.label :date_available %><br>      
+      <%= f.date_field :date_available %>
+    </div>
   </div>
 
   <div class="form-inline">
@@ -34,10 +45,6 @@
     <div class="field form-group form_padding">
       <%= f.label :square_feet %><br>
       <%= f.number_field :square_feet %>
-    </div>
-    <div class="field form-group form_padding">
-      <%= f.label :price %><br>
-      <%= f.text_field :price %>
     </div>
   </div>
 
@@ -68,6 +75,10 @@
     <div class="field form-group form_padding text-center">
       <%= f.label :has_parking %><br>
       <%= f.check_box :has_parking %>
+    </div>
+    <div class="field form-group form_padding text-center">
+      <%= f.label :is_available %><br>
+      <%= f.check_box :is_available %>
     </div>
   </div>
 

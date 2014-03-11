@@ -51,8 +51,8 @@
   <%= @user.website %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-large btn-default" %> |
+<%= link_to 'Back', users_path, class: "btn btn-large btn-info" %>
 
 <!-- Show the properties that are being managed -->
 <p>
