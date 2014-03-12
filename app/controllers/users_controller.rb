@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if session[:user_id] != @user.id
       redirect_to properties_path, notice: "Not authorized"
     end
-    @properties = Property.all  
+    #@properties = Property.all  
     @tenant_ofs = TenantOf.all
 
   end

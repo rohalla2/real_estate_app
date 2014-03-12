@@ -66,47 +66,44 @@
       <th>Bedrooms</th>
       <th>Bathrooms</th>
       <th>Title</th>
-      <th></th>
+      <th>Role</th>
     </tr>
   </thead>
 
     <tbody>
 
-      <% if @user.user_type == "Manager" %>
-        <!-- Displays all properties user manages -->
-        <% @properties.each do |property| %>
+      <!-- Displays all properties user manages -->
+        <% @user.properties.each do |property| %>
           <% if property.user_id == @user.id %>
             <tr class="clickableRow" href="<%= property_path(property.id) %>">
               <td><%= property.is_available %></td>
               <td><%= property.beds %></td>
               <td><%= property.baths %></td>
               <td><%= property.name %> </td>
+              <td>Manager</td>
             </tr>
           <% end %>
         <% end %>
 
-
-      <% else %>
         <!-- Displays all properties user is tenant of -->
-        <% @tenant_ofs.each do |tenant| %>
-          <% if tenant.User_id == @user.id %>
-            <% currproperty = Property.find_by(id: tenant.Property_id)  %>
-            <tr class="clickableRow" href= "/properties/<%= tenant.Property_id %>">
-              <td><%= currproperty.is_available %></td>
-              <td><%= currproperty.beds %></td>
-              <td><%= currproperty.baths %></td>
-              <td><%= currproperty.name %> </td>
+        <% @user.rented_properties.each do |property| %>
+            <tr class="clickableRow" href= "<%= property_path(property.id) %>">
+              <td><%= property.is_available %></td>
+              <td><%= property.beds %></td>
+              <td><%= property.baths %></td>
+              <td><%= property.name %> </td>
+              <td>Tenant</td>
             </tr> 
-          <% end %>
         <% end %>
-
-
-      <% end %>
-
-
-
 
   </tbody>
 </table>
 
 <br>
+<script>
+$(document).ready(function($) {
+      $(".clickableRow").click(function() {
+            window.document.location = $(this).attr("href");
+      });
+});
+</script>
