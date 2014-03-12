@@ -1,10 +1,8 @@
 class ApplicationsController < ApplicationController
-  before_action :authorize
+  before_action :authorize  #must be logged in to view any pages
   before_action :set_application, only: [:show, :edit, :update, :destroy]
 
-
-  # GET /applications
-  # GET /applications.json
+  #index.html.erb shows all applications sent or received by @user
   def index
     applied_to = @user.applications
     applications_received = @user.properties.flat_map(&:applications)
@@ -12,31 +10,25 @@ class ApplicationsController < ApplicationController
     @applications = temp.sort_by(&:created_at)
   end
 
-  # GET /applications/1
-  # GET /applications/1.json
+  #only shows the application page if @user is the applicant or property manager
   def show
-    #if current user is not property manager of property or the applicant
     if @user.id != @application.user.id && @user.id != @application.property.user.id
       redirect_to applications_path, notice: "Not authorized."
     end
   end
 
-  # GET /applications/new
   def new
     @property_id = params["propertyID"]
     @application = Application.new
-
   end
 
-  # GET /applications/1/edit
+  #only allows an application to be edited by the applicant
   def edit
     if @user.id != @application.user.id
       redirect_to application_path(@application), notice: "Only the applicant can edit their application."
     end
   end
 
-  # POST /applications
-  # POST /applications.json
   def create
     @application = Application.new(application_params)
     property_id = params["property_id"]
@@ -46,30 +38,28 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.save
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @application }
       else
         format.html { render action: 'new' }
-        format.json { render json: @application.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /applications/1
-  # PATCH/PUT /applications/1.json
+  #Only allows the applicant to update application
   def update
+    if @user.id != @application.user.id 
+      redirect_to applications_path, notice: "Not authorized!"
+    end
+
     respond_to do |format|
       if @application.update(application_params)
         format.html { redirect_to @application, notice: 'Application was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @application.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /applications/1
-  # DELETE /applications/1.json
+  #only allows the applicant to delete their application
   def destroy
     if @user.id != @application.user.id 
       redirect_to applications_path, notice: "Not authorized!"
