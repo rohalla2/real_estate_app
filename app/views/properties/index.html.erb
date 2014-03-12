@@ -12,6 +12,8 @@
         <%= link_to property.name, property_path(property) %>
         (<%= number_to_currency(property.price) %>)
       </h2>
+      
+      <h3>Available Starting: <%= property.date_available.to_formatted_s(:long) %></h3>
       <p class="lead"><%= property.description %></p>    
         <!-- Create button for user to apply -->
         <% if @user && @user.user_type == "Tenant" %> 

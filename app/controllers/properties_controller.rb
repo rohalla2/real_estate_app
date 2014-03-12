@@ -5,7 +5,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all 
+    @properties = Property.where(:is_available => true)
   end
 
   # GET /properties/1
@@ -80,6 +80,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:name, :description, :beds, :baths, :square_feet, :price, :address, :city, :state, :zip_code, :has_laundry, :has_parking, :image_url)
+      params.require(:property).permit(:name, :description, :beds, :baths, :square_feet, :price, :address, :city, :state, :zip_code, :has_laundry, :has_parking, :image_url, :is_available, :date_available)
     end
 end

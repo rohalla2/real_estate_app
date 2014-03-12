@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
+  before_action :authorize
   before_action :set_application, only: [:show, :edit, :update, :destroy]
-  #before_action :check_if_manager
 
 
   # GET /applications
@@ -15,14 +15,14 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
-    @applications = Application.all
+    #if current user is not property manager of property or the applicant
+    if @user.id != @application.user.id && @user.id != @application.property.user.id
+      redirect_to applications_path, notice: "Not authorized."
+    end
   end
 
   # GET /applications/new
   def new
-    if @user.nil?
-      redirect_to login_path, notice: "You must log in to apply to a property!"
-    end
     @property_id = params["propertyID"]
     @application = Application.new
 
@@ -30,6 +30,9 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/1/edit
   def edit
+    if @user.id != @application.user.id
+      redirect_to application_path(@application), notice: "Only the applicant can edit their application."
+    end
   end
 
   # POST /applications
@@ -68,9 +71,12 @@ class ApplicationsController < ApplicationController
   # DELETE /applications/1
   # DELETE /applications/1.json
   def destroy
+    if @user.id != @application.user.id 
+      redirect_to applications_path, notice: "Not authorized!"
+    end
     @application.destroy
     respond_to do |format|
-      format.html { redirect_to applications_url }
+      format.html { redirect_to applications_url, notice: "Application deleted." }
       format.json { head :no_content }
     end
   end

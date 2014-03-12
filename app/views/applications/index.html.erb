@@ -6,9 +6,7 @@
       <th>Tenant Name</th>
       <th>Property Name</th>
       <th>Price offer</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Property Manager</th>
     </tr>
   </thead>
 
@@ -18,9 +16,7 @@
         <td><%= application.user.first_name + " " + application.user.last_name %></td>
         <td><%= application.property.name %></td>
         <td><%= number_to_currency(application.price_offer) %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= application.property.user.first_name %> <%= application.property.user.last_name %></td>
       </tr>
     <% end %>
   </tbody>

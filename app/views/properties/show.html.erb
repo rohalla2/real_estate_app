@@ -23,7 +23,6 @@
   <!-- Can only submit application if a tenant -->
   <% if @user && @user.user_type == "Tenant" %>
     <%= link_to 'Submit Application', new_application_path(propertyID: @property), class: 'pull-right btn btn-large btn-info'%>
-    
   <% end if %>
 
 
@@ -45,7 +44,8 @@
       <%= @property.user.last_name %>
     </p>
     <p class="lead"><strong>Description: </strong><%= @property.description %></p>
-    <p class="lead"><strong>Rent: </strong><%= @property.price %></p>
+    <p class="lead"><strong>Date Available: </strong><%= @property.date_available.to_formatted_s(:long) %></p>
+    <p class="lead"><strong>Rent: </strong><%= number_to_currency(@property.price) %></p>
     <p class="lead"><strong># Beds: </strong><%= @property.beds %></p>
     <p class="lead"><strong># Baths: </strong><%= @property.baths %></p>
     <p class="lead"><strong>Square Feet: </strong><%= @property.square_feet %></p>
