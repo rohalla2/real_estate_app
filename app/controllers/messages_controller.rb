@@ -1,32 +1,28 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
   before_action :authorize
-
-  # GET /messages
-  # GET /messages.json
-  def index
-  end
-
-  # GET /messages/1
-  # GET /messages/1.json
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  
+  #only allows a user to view a message that has been sent to them
+  #or sent by them
   def show
+    if @message.user.id != @user.id && @user.messages_received.find_by(id: @message.id).nil?
+      redirect_to messages_url, notice: "Not Authorized."
+    end 
   end
 
-  # GET /messages/new
   def new
     @message = Message.new
   end
 
-  # GET /messages/1/edit
+  # does not allow a message to be edited
   def edit
-    redirect_to messages_url, notice: "You cannot edit a message after it is sent."
+    redirect_to message_url(@message), notice: "You cannot edit a message after it is sent."
   end
 
-  # POST /messages
-  # POST /messages.json
+  #creates a new message
   def create
     @message = Message.new(message_params)
-    @message.user_id = @user.id
+    @message.user_id = @user.id  
 
     #try to find users in :to param
     to_users_emails = params[:to].split(" ")
@@ -42,29 +38,19 @@ class MessagesController < ApplicationController
       if @message.errors.count == 0 && @message.save
         send_message_to_recipients(to_users_emails, @message.id)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @message }
       else
         format.html { render action: 'new' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /messages/1
-  # PATCH/PUT /messages/1.json
   def update
     redirect_to messages_url, notice: "You cannot edit a message after it is sent."
   end
 
-  # DELETE /messages/1
-  # DELETE /messages/1.json
+  #messages cannot be deleted
   def destroy
     redirect_to messages_url, notice: "You cannot delete this message."
-    # @message.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to messages_url }
-    #   format.json { head :no_content }
-    # end
   end
 
   private
