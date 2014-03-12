@@ -12,7 +12,11 @@
   <% end %>
     <div class="field">
     <%= label_tag(:to, "To") %><br>
-    <%= text_field_tag(:to) %>
+    <% if params["to"] %>
+      <%= text_field_tag(:to, params["to"]) %>
+    <% else %>
+      <%= text_field_tag(:to) %>
+    <% end %>
     <p>Seperate User's email addresses with spaces</p>
   </div>
 

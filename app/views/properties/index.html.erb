@@ -19,7 +19,11 @@
         <% end %>
 
         <!-- link to send link to the owner of the property -->
-        <%= mail_to property.user.email, "Contact Manager", {subject: property.name, class: "btn btn-default"}  %>
+        <% if @user.nil? %>
+          <%= mail_to property.user.email, "Contact Manager", {subject: property.name, class: "btn btn-default"}  %>
+        <% else %>
+          <%= link_to "Contact Manager", new_message_path(to: property.user.email), class: "btn btn-default" %>
+        <% end %>
       </p>
     
     </div>
