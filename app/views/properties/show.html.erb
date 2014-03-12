@@ -11,12 +11,12 @@
 
   <!-- Only make payment if tenant of property and Active -->
   <% #if @property.Tenant_ofs.user_id == @user_id && @property.Tenant_ofs.is_active = true %>
-  <% if @user.user_type == "Tenant" %>  
+  <% if @user && @user.user_type == "Tenant" %>  
     <%= link_to 'New Payment', new_payment_path(propertyID: @property), class: 'pull-right btn btn-large btn-success'%>
   <% end if %>
 
   <!-- Can only submit application if a tenant -->
-  <% if @user.user_type == "Tenant" %>
+  <% if @user && @user.user_type == "Tenant" %>
     <%= mail_to @property.user.email, "Contact Manager", {subject: @property.name, class: 'pull-right btn btn-large btn-warning'} %>
     <%= link_to 'Submit Application', new_application_path(propertyID: @property), class: 'pull-right btn btn-large btn-info'%>
     

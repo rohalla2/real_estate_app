@@ -14,7 +14,7 @@
       </h2>
       <p class="lead"><%= property.description %></p>    
         <!-- Create button for user to apply -->
-        <% if @user.user_type == "Tenant" %> 
+        <% if @user && @user.user_type == "Tenant" %> 
           <%= link_to "Apply", new_application_path(propertyID: property.id), class: "btn btn-success"  %> |
         <% end %>
 
