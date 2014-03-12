@@ -367,44 +367,44 @@ all_User = [
  ]
 all_TenantOf = [ 
 { 
-:User_id => "4",
-:Property_id => "1",
+:user_id => "4",
+:property_id => "1",
 :is_active => "true"
 
  }, 
 {
-:User_id => "5",
-:Property_id => "2",
+:user_id => "5",
+:property_id => "2",
 :is_active => "true"
 
  }, 
 {
-:User_id => "6",
-:Property_id => "3",
+:user_id => "6",
+:property_id => "3",
 :is_active => "true"
 
  }, 
 {
-:User_id => "7",
-:Property_id => "4",
+:user_id => "7",
+:property_id => "4",
 :is_active => "true"
 
  }, 
 {
-:User_id => "8",
-:Property_id => "5",
+:user_id => "8",
+:property_id => "5",
 :is_active => "false"
 
  }, 
 {
-:User_id => "9",
-:Property_id => "4",
+:user_id => "9",
+:property_id => "4",
 :is_active => "true"
 
  }, 
 {
-:User_id => "10",
-:Property_id => "5",
+:user_id => "10",
+:property_id => "5",
 :is_active => "true"
 
  } 
@@ -415,8 +415,8 @@ all_Message = [
 :message => "Hey, my sink broke, so you could you like fix it dude",
 :message_type => "UTIL",
 :user_id => "4",
-:created_at => "3/8/2014 7:47:15 PM",
-:updated_at => "3/8/2014 7:47:15 PM"
+:created_at => "3/8/2014 8:29:04 PM",
+:updated_at => "3/8/2014 8:29:04 PM"
 
  }, 
 {
@@ -424,8 +424,8 @@ all_Message = [
 :message => "Yea, I'll take care of it Tuesday",
 :message_type => "UTIL",
 :user_id => "1",
-:created_at => "3/9/2014 7:47:15 PM",
-:updated_at => "3/9/2014 7:47:15 PM"
+:created_at => "3/9/2014 8:29:04 PM",
+:updated_at => "3/9/2014 8:29:04 PM"
 
  }, 
 {
@@ -433,8 +433,8 @@ all_Message = [
 :message => "Thanks",
 :message_type => "UTIL",
 :user_id => "4",
-:created_at => "3/10/2014 7:47:15 PM",
-:updated_at => "3/10/2014 7:47:15 PM"
+:created_at => "3/10/2014 8:29:04 PM",
+:updated_at => "3/10/2014 8:29:04 PM"
 
  }, 
 {
@@ -442,8 +442,8 @@ all_Message = [
 :message => "Its complete, let me know if there is any problems",
 :message_type => "UTIL",
 :user_id => "1",
-:created_at => "3/11/2014 7:47:15 PM",
-:updated_at => "3/11/2014 7:47:15 PM"
+:created_at => "3/11/2014 8:29:04 PM",
+:updated_at => "3/11/2014 8:29:04 PM"
 
  }, 
 {
@@ -451,8 +451,8 @@ all_Message = [
 :message => "Rent is due in three days",
 :message_type => "RENT",
 :user_id => "2",
-:created_at => "3/9/2014 7:47:15 PM",
-:updated_at => "3/9/2014 7:47:15 PM"
+:created_at => "3/9/2014 8:29:04 PM",
+:updated_at => "3/9/2014 8:29:04 PM"
 
  }, 
 {
@@ -460,8 +460,8 @@ all_Message = [
 :message => "I'm going to be a bit late.. Sorry",
 :message_type => "RENT",
 :user_id => "6",
-:created_at => "3/10/2014 7:47:15 PM",
-:updated_at => "3/10/2014 7:47:15 PM"
+:created_at => "3/10/2014 8:29:04 PM",
+:updated_at => "3/10/2014 8:29:04 PM"
 
  }, 
 {
@@ -469,8 +469,8 @@ all_Message = [
 :message => "check your account, its in there",
 :message_type => "RENT",
 :user_id => "7",
-:created_at => "3/11/2014 7:47:15 PM",
-:updated_at => "3/11/2014 7:47:15 PM"
+:created_at => "3/11/2014 8:29:04 PM",
+:updated_at => "3/11/2014 8:29:04 PM"
 
  } 
  ]
@@ -722,8 +722,8 @@ nC = 1
 all_TenantOf.each do |all| 
 n = TenantOf.new
 n.id = nC
-n.User_id = all[:User_id]
-n.Property_id = all[:Property_id]
+n.user_id = all[:user_id]
+n.property_id = all[:property_id]
 n.is_active = all[:is_active]
 n.save
 nC += 1
