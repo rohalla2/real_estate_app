@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	has_many :properties
 	has_many :applications
+	has_many :tenant_ofs
+	has_many :rented_properties, through: :tenant_ofs, source: "property"
 	has_many :messages_sent, class_name: "Message"
 	has_many :recipients
 	has_many :messages_received, through: :recipients, source: "message"

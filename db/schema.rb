@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308214549) do
+ActiveRecord::Schema.define(version: 20140311213913) do
 
   create_table "applications", force: true do |t|
     t.integer  "user_id"
@@ -81,15 +81,15 @@ ActiveRecord::Schema.define(version: 20140308214549) do
   add_index "recipients", ["user_id"], name: "index_recipients_on_user_id"
 
   create_table "tenant_ofs", force: true do |t|
-    t.integer  "User_id"
-    t.integer  "Property_id"
+    t.integer  "user_id"
+    t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_active"
   end
 
-  add_index "tenant_ofs", ["Property_id"], name: "index_tenant_ofs_on_Property_id"
-  add_index "tenant_ofs", ["User_id"], name: "index_tenant_ofs_on_User_id"
+  add_index "tenant_ofs", ["property_id"], name: "index_tenant_ofs_on_property_id"
+  add_index "tenant_ofs", ["user_id"], name: "index_tenant_ofs_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
