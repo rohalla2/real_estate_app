@@ -2,31 +2,23 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :check_if_manager, only: [:new, :create, :edit, :destroy, :update]
   
-  # GET /properties
-  # GET /properties.json
+  #lists propertys that are currently available
   def index
     @properties = Property.where(:is_available => true)
   end
 
-  # GET /properties/1
-  # GET /properties/1.json
-  def show
-  end
-
-  # GET /properties/new
+  #any manager may add a new property
   def new
     @property = Property.new
   end
 
-  # GET /properties/1/edit
+  #only the owner of a property can edit it
   def edit
     if @property.user.id != @user.id
       redirect_to properties_path, notice:"Not authorized"
     end
   end
 
-  # POST /properties
-  # POST /properties.json
   def create
     @property = Property.new(property_params)
     @property.user_id = session[:user_id]
@@ -34,16 +26,13 @@ class PropertiesController < ApplicationController
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @property }
       else
         format.html { render action: 'new' }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /properties/1
-  # PATCH/PUT /properties/1.json
+  #only the owner of a property can edit it
   def update
     if @property.user.id != @user.id
       redirect_to properties_path, notice:"Not authorized"
@@ -51,16 +40,13 @@ class PropertiesController < ApplicationController
     respond_to do |format|
       if @property.update(property_params)
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /properties/1
-  # DELETE /properties/1.json
+  #only the owner can delete the property
   def destroy
     if @property.user.id != @user.id
       redirect_to properties_path, notice:"Not authorized"
@@ -68,7 +54,6 @@ class PropertiesController < ApplicationController
     @property.destroy
     respond_to do |format|
       format.html { redirect_to properties_url }
-      format.json { head :no_content }
     end
   end
 
