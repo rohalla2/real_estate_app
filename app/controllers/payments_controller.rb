@@ -1,8 +1,7 @@
 class PaymentsController < ApplicationController
+  before_action :authorize
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
-  # GET /payments
-  # GET /payments.json
   def index
     sent = @user.payments
     received = @user.properties.flat_map(&:payments)
@@ -10,23 +9,27 @@ class PaymentsController < ApplicationController
     @payments = temp.sort_by(&:created_at)
   end
 
-  # GET /payments/1
-  # GET /payments/1.json
+  #only shows payment if it is to or from @user
   def show
+    if @user.id != @payment.user.id && @user.id != @payment.property.user.id
+      redirect_to payments_path, notice: "Not authorized."
+    end
   end
 
-  # GET /payments/new
+  #only allows access to new page if there is a propertyID in the params hash
   def new
     @property_id = params["propertyID"]
+    if @property_id.nil?
+      redirect_to user_path(@user), notice: "You must submit payments from the link on the property page."
+    end
     @payment = Payment.new
   end
 
-  # GET /payments/1/edit
+  #Does not allow editing of payments
   def edit
+    redirect_to payment_path(@payment), notice: "You cannot edit this payment."
   end
 
-  # POST /payments
-  # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
     property_id = params["property_id"]
@@ -37,36 +40,20 @@ class PaymentsController < ApplicationController
     respond_to do |format|
       if @payment.save
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @payment }
       else
         format.html { render action: 'new' }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /payments/1
-  # PATCH/PUT /payments/1.json
+  #does not allow updating of payments
   def update
-    respond_to do |format|
-      if @payment.update(payment_params)
-        format.html { redirect_to @payment, notice: 'Payment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to payment_path(@payment), notice: "You cannot edit this payment."
   end
 
-  # DELETE /payments/1
-  # DELETE /payments/1.json
+  #does not allow deletion of payments
   def destroy
-    @payment.destroy
-    respond_to do |format|
-      format.html { redirect_to payments_url }
-      format.json { head :no_content }
-    end
+      redirect_to payment_path(@payment), notice: "You cannot delete this payment."
   end
 
   private
