@@ -5,4 +5,6 @@ class Message < ActiveRecord::Base
 
   validates :title, :message, :message_type, presence: true
 
+  MESSAGE_TYPES = ["UTIL", "RENT", "APPLICATION", "OTHER"]
+
 end

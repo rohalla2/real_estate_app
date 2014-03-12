@@ -9,14 +9,14 @@ all_Property = [
 :beds => "2",
 :baths => "2",
 :square_feet => "1600",
-:price => "2500",
-:address => "14th at State",
+:price => "6000",
+:address => "401 N Wabash Ave Unit 89A",
 :city => "Chicago",
 :state => "IL",
-:zip_code => "60606",
+:zip_code => "60611",
 :has_laundry => "true",
 :has_parking => "false",
-:image_url => "http://lh4.ggpht.com/_dlkAw43cLC0/SRxCyCz7O4I/AAAAAAAAAeo/9R7BlywFLxg/s800/34-domehouse-thumb.jpg",
+:image_url => "http://p.rdcpix.com/v01/lda2b8844-m0m.jpg",
 :user_id => "1",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -30,13 +30,13 @@ all_Property = [
 :baths => "1.5",
 :square_feet => "2600",
 :price => "2200",
-:address => "1514 S Albany",
+:address => "1442 N Astor St",
 :city => "Chicago",
 :state => "IL",
-:zip_code => "60659",
+:zip_code => "60610",
 :has_laundry => "true",
 :has_parking => "true",
-:image_url => "http://cdn.frontdoor.com/dims4/SCRIPPS/dba8599/2147483647/thumbnail/630x473%5E/quality/75/?url=http%3A%2F%2Fcdn.frontdoor.com%2F93%2F1d%2F9c5b673147e9a42dd17b89f371a2%2F22714-kf-insight7.jpg",
+:image_url => "http://p.rdcpix.com/v01/le6482e44-m2m.jpg",
 :user_id => "1",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -50,13 +50,13 @@ all_Property = [
 :baths => "2",
 :square_feet => "2200",
 :price => "800",
-:address => "463 W Philly",
+:address => "209 E Lake Shore D",
 :city => "Chicago",
 :state => "IL",
-:zip_code => "60604",
+:zip_code => "60611",
 :has_laundry => "false",
 :has_parking => "false",
-:image_url => "http://media.tumblr.com/8XzUlvJKGh3dmv1aYqS8Cocho1_500.jpg",
+:image_url => "http://p.rdcpix.com/v01/l7d248844-w0t.jpg",
 :user_id => "2",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -70,13 +70,13 @@ all_Property = [
 :baths => "3",
 :square_feet => "2800",
 :price => "3600",
-:address => "430 Sunset Blvd",
-:city => "Miami",
-:state => "FL",
-:zip_code => "33137",
+:address => "1427 N State Pkwy",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60610",
 :has_laundry => "true",
 :has_parking => "false",
-:image_url => "http://www.designboom.com/tools/WPro/images/08-1decemberblogs/shell01.jpg",
+:image_url => "http://p.rdcpix.com/v01/lb7bd6744-m0t.jpg",
 :user_id => "2",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -90,13 +90,13 @@ all_Property = [
 :baths => "1",
 :square_feet => "650",
 :price => "699",
-:address => "945 Dwayne Wade Drive",
-:city => "Miami",
-:state => "FL",
-:zip_code => "33147",
+:address => "44 E Elm St",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60611",
 :has_laundry => "false",
 :has_parking => "false",
-:image_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Nakagin_Capsule_Tower_02.jpg/450px-Nakagin_Capsule_Tower_02.jpg",
+:image_url => "http://p.rdcpix.com/v01/l0b0f8d43-m0t.jpg",
 :user_id => "2",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -110,13 +110,13 @@ all_Property = [
 :baths => "2",
 :square_feet => "1500",
 :price => "3000",
-:address => "460 W Pelican Ave",
-:city => "Miami",
-:state => "FL",
-:zip_code => "33173",
+:address => "2041 N Howe St",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60614",
 :has_laundry => "true",
 :has_parking => "true",
-:image_url => "http://cdn.freshome.com/wp-content/uploads/2010/09/Letterbox-House-2.jpg",
+:image_url => "http://p.rdcpix.com/v01/l363d8d44-m0t.jpg",
 :user_id => "2",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -130,13 +130,13 @@ all_Property = [
 :baths => "1",
 :square_feet => "1800",
 :price => "3210",
-:address => "2121 N Canal St",
-:city => "Manhattan",
-:state => "NY",
-:zip_code => "10013",
+:address => "311 N Waller Ave",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60644",
 :has_laundry => "true",
 :has_parking => "false",
-:image_url => "http://www.inhabitat.com/wp-content/uploads/birdisland-ed01.jpg",
+:image_url => "http://p.rdcpix.com/v01/l90998644-m0m.jpg",
 :user_id => "3",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -150,13 +150,13 @@ all_Property = [
 :baths => "1",
 :square_feet => "800",
 :price => "2999",
-:address => "4316 W Broadway",
-:city => "Manhattan",
-:state => "NY",
-:zip_code => "10012",
+:address => "10652 S Avenue N",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60617",
 :has_laundry => "false",
 :has_parking => "false",
-:image_url => "http://www.inhabitat.com/wp-content/uploads/slidinghousehooray.jpg",
+:image_url => "http://p.rdcpix.com/v01/ld89f5944-w0t.jpg",
 :user_id => "3",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -170,13 +170,13 @@ all_Property = [
 :baths => "1.5",
 :square_feet => "900",
 :price => "1999",
-:address => "234 N 48th St",
-:city => "Brooklyn",
-:state => "NY",
-:zip_code => "11201",
+:address => "9737 S Harvard Ave",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60628",
 :has_laundry => "false",
 :has_parking => "false",
-:image_url => "http://1.media.tumblr.com/9cyPFQbgCni5vc9vyAKFnOllo1_500.jpg",
+:image_url => "http://p.rdcpix.com/v01/l81ac9044-m0m.jpg",
 :user_id => "3",
 :date_available => "1/1/2014",
 :is_available => "false"
@@ -190,13 +190,13 @@ all_Property = [
 :baths => "3",
 :square_feet => "3600",
 :price => "3600",
-:address => "1623 N Queens Blvd",
-:city => "Queens",
-:state => "NY",
-:zip_code => "11360",
+:address => "1011 N Wolcott Ave",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60622",
 :has_laundry => "true",
 :has_parking => "true",
-:image_url => "http://freshome.com/wp-content/uploads/2007/10/toilet-house.jpg",
+:image_url => "http://p.rdcpix.com/v02/l4a707744-w0m.jpg",
 :user_id => "3",
 :date_available => "1/1/2014",
 :is_available => "true"
@@ -207,8 +207,8 @@ all_User = [
 { 
 :first_name => "John",
 :last_name => "Kennedy",
-:password => "thekennedy",
-:password_confirmation => "thekennedy",
+:password => "password",
+:password_confirmation => "password",
 :email => "John.Kennedy@gmail.com",
 :address => "123 N Lane Street",
 :city => "Chicago",
@@ -217,46 +217,46 @@ all_User = [
 :picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/John_F._Kennedy%2C_White_House_photo_portrait%2C_looking_up.jpg/220px-John_F._Kennedy%2C_White_House_photo_portrait%2C_looking_up.jpg",
 :user_type => "Manager",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.JohnKennedy.com/website"
 
  }, 
 {
 :first_name => "Lebron",
 :last_name => "James",
-:password => "theking",
-:password_confirmation => "theking",
+:password => "password",
+:password_confirmation => "password",
 :email => "Lebron.James@gmail.com",
 :address => "123 N Lane Street",
-:city => "Miami",
-:state => "FL",
-:zip_code => "33147",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60657",
 :picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/LeBron_James_vs_Washington_3-30-11.jpg/235px-LeBron_James_vs_Washington_3-30-11.jpg",
 :user_type => "Manager",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.LebronJames.com/website"
 
  }, 
 {
 :first_name => "Donald",
 :last_name => "Trump",
-:password => "thetrump",
-:password_confirmation => "thetrump",
+:password => "password",
+:password_confirmation => "password",
 :email => "Donald.Trump@gmail.com",
 :address => "123 N Lane Street",
-:city => "Manhattan",
-:state => "NY",
-:zip_code => "10012",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60634",
 :picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Donald_Trump_by_Gage_Skidmore.jpg/250px-Donald_Trump_by_Gage_Skidmore.jpg",
 :user_type => "Manager",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.DonaldTrump.com/website"
 
  }, 
 {
 :first_name => "Aziz",
 :last_name => "Ansari",
-:password => "theAziz",
-:password_confirmation => "theAziz",
+:password => "password",
+:password_confirmation => "password",
 :email => "Aziz.Ansari@gmail.com",
 :address => "123 N Lane Street",
 :city => "Chicago",
@@ -265,103 +265,103 @@ all_User = [
 :picture_url => "http://www.pastemagazine.com/blogs/lists/assets_c/2013/11/comicsansari-thumb-400x265-96202.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.AzizAnsari.com/website"
 
  }, 
 {
 :first_name => "Louie",
 :last_name => "C.K.",
-:password => "theLouie",
-:password_confirmation => "theLouie",
+:password => "password",
+:password_confirmation => "password",
 :email => "Louie.C.K.@gmail.com",
 :address => "123 N Lane Street",
 :city => "Chicago",
 :state => "IL",
-:zip_code => "60606",
+:zip_code => "60601",
 :picture_url => "http://ia.media-imdb.com/images/M/MV5BMTM4OTkwNzg3NF5BMl5BanBnXkFtZTcwMjc5NjcyNw@@._V1_SX214_CR0,0,214,317_.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.LouieC.K..com/website"
 
  }, 
 {
 :first_name => "Jerry",
 :last_name => "Seinfeld",
-:password => "theJerry",
-:password_confirmation => "theJerry",
+:password => "password",
+:password_confirmation => "password",
 :email => "Jerry.Seinfeld@gmail.com",
 :address => "123 N Lane Street",
-:city => "Miami",
-:state => "FL",
-:zip_code => "33147",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60610",
 :picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Jerry_Seinfeld_by_David_Shankbone.jpg/220px-Jerry_Seinfeld_by_David_Shankbone.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.JerrySeinfeld.com/website"
 
  }, 
 {
 :first_name => "Nick",
 :last_name => "Kroll",
-:password => "theNick",
-:password_confirmation => "theNick",
+:password => "password",
+:password_confirmation => "password",
 :email => "Nick.Kroll@gmail.com",
 :address => "123 N Lane Street",
-:city => "Miami",
-:state => "FL",
-:zip_code => "33147",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60603",
 :picture_url => "http://ia.media-imdb.com/images/M/MV5BMjI4NTUwODA4OF5BMl5BanBnXkFtZTcwMjk3MzU0Ng@@._V1_SY317_CR3,0,214,317_.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.NickKroll.com/website"
 
  }, 
 {
 :first_name => "Key",
 :last_name => "Peele",
-:password => "theKey",
-:password_confirmation => "theKey",
+:password => "password",
+:password_confirmation => "password",
 :email => "Key.Peele@gmail.com",
 :address => "123 N Lane Street",
-:city => "Manhattan",
-:state => "NY",
-:zip_code => "10012",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60634",
 :picture_url => "http://www.pastemagazine.com/blogs/lists/assets_c/2013/11/keyandpeelemain-thumb-400x299-95779.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.KeyPeele.com/website"
 
  }, 
 {
 :first_name => "Andrew",
 :last_name => "WK",
-:password => "theAndrew",
-:password_confirmation => "theAndrew",
+:password => "password",
+:password_confirmation => "password",
 :email => "Andrew.WK@gmail.com",
 :address => "123 N Lane Street",
-:city => "Manhattan",
-:state => "NY",
-:zip_code => "10012",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60060",
 :picture_url => "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Andrew_WK.jpg/220px-Andrew_WK.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.AndrewWK.com/website"
 
  }, 
 {
 :first_name => "Saul",
 :last_name => "Goodman",
-:password => "theSaul",
-:password_confirmation => "theSaul",
+:password => "password",
+:password_confirmation => "password",
 :email => "Saul.Goodman@gmail.com",
 :address => "123 N Lane Street",
-:city => "Manhattan",
-:state => "NY",
-:zip_code => "10012",
+:city => "Chicago",
+:state => "IL",
+:zip_code => "60606",
 :picture_url => "http://upload.wikimedia.org/wikipedia/en/thumb/1/16/Saul_Goodman.jpg/240px-Saul_Goodman.jpg",
 :user_type => "Tenant",
 :phone_number => "123-456-7890",
-:website => "www.google.com"
+:website => "http://www.SaulGoodman.com/website"
 
  } 
  ]
@@ -415,8 +415,8 @@ all_Message = [
 :message => "Hey, my sink broke, so you could you like fix it dude",
 :message_type => "UTIL",
 :user_id => "4",
-:created_at => "3/7/2014 9:39:02 PM",
-:updated_at => "3/7/2014 9:39:02 PM"
+:created_at => "3/8/2014 7:47:15 PM",
+:updated_at => "3/8/2014 7:47:15 PM"
 
  }, 
 {
@@ -424,8 +424,8 @@ all_Message = [
 :message => "Yea, I'll take care of it Tuesday",
 :message_type => "UTIL",
 :user_id => "1",
-:created_at => "3/8/2014 9:39:02 PM",
-:updated_at => "3/8/2014 9:39:02 PM"
+:created_at => "3/9/2014 7:47:15 PM",
+:updated_at => "3/9/2014 7:47:15 PM"
 
  }, 
 {
@@ -433,8 +433,8 @@ all_Message = [
 :message => "Thanks",
 :message_type => "UTIL",
 :user_id => "4",
-:created_at => "3/9/2014 9:39:02 PM",
-:updated_at => "3/9/2014 9:39:02 PM"
+:created_at => "3/10/2014 7:47:15 PM",
+:updated_at => "3/10/2014 7:47:15 PM"
 
  }, 
 {
@@ -442,8 +442,8 @@ all_Message = [
 :message => "Its complete, let me know if there is any problems",
 :message_type => "UTIL",
 :user_id => "1",
-:created_at => "3/10/2014 9:39:02 PM",
-:updated_at => "3/10/2014 9:39:02 PM"
+:created_at => "3/11/2014 7:47:15 PM",
+:updated_at => "3/11/2014 7:47:15 PM"
 
  }, 
 {
@@ -451,8 +451,8 @@ all_Message = [
 :message => "Rent is due in three days",
 :message_type => "RENT",
 :user_id => "2",
-:created_at => "3/8/2014 9:39:02 PM",
-:updated_at => "3/8/2014 9:39:02 PM"
+:created_at => "3/9/2014 7:47:15 PM",
+:updated_at => "3/9/2014 7:47:15 PM"
 
  }, 
 {
@@ -460,8 +460,8 @@ all_Message = [
 :message => "I'm going to be a bit late.. Sorry",
 :message_type => "RENT",
 :user_id => "6",
-:created_at => "3/9/2014 9:39:02 PM",
-:updated_at => "3/9/2014 9:39:02 PM"
+:created_at => "3/10/2014 7:47:15 PM",
+:updated_at => "3/10/2014 7:47:15 PM"
 
  }, 
 {
@@ -469,8 +469,8 @@ all_Message = [
 :message => "check your account, its in there",
 :message_type => "RENT",
 :user_id => "7",
-:created_at => "3/10/2014 9:39:02 PM",
-:updated_at => "3/10/2014 9:39:02 PM"
+:created_at => "3/11/2014 7:47:15 PM",
+:updated_at => "3/11/2014 7:47:15 PM"
 
  } 
  ]
