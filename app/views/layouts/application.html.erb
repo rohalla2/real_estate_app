@@ -53,7 +53,7 @@
   </div>
     
 <div class="container">
-    <% if @user %>
+    <% if @user && !@user.new_record? %>
       <p class="lead">
         <%= "Welcome, #{@user.first_name}" %>
       </p>
