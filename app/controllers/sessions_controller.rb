@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
+  
+  # Logs a user in
   def create
     user_email = params[:email].downcase
   	user = User.find_by(email: user_email)
   	if user and user.authenticate(params[:password])
   		session[:user_id] = user.id
-  		redirect_to properties_url
+  		redirect_to user_path(user)
   	else
   		redirect_to login_url, alert: "Invalid user/password combination"
   	end
