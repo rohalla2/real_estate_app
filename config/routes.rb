@@ -1,27 +1,23 @@
 RealEstateApp::Application.routes.draw do
+
+  root 'static_pages#home'
+  get "/information" => 'static_pages#information'
+  
   resources :payments
-
   resources :applications
-
   resources :messages
-
+  resources :users
+  resources :properties
+  resources :tenant_ofs
+  
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
 
-  get "logout" => 'sessions#destroy'
 
-  resources :users
 
-  resources :properties
-
-  resources :tenant_ofs
-
-  root 'static_pages#home'
-  get "static_pages/home"
-  get "information" => 'static_pages#information'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
