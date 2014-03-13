@@ -53,6 +53,10 @@
 
 <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-large btn-default" %>
 
+
+ <% if @user && @user.user_type == "Manager" %>
+  <%= link_to 'New Property', new_property_path, class: "btn btn-success pull-left" %>
+<% end if %>
 <!-- Show the properties that are being managed -->
 <p>
   <h2>Associated Properties:</h2>
