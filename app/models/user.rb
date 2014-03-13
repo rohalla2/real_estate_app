@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
 	before_validation :downcase_username
 	before_create :downcase_username
+	before_save :downcase_username
 
 	USER_TYPES = ["Manager", "Tenant"]
   	validates :first_name, :last_name, :address, :city, :state, :zip_code, :picture_url, presence: true
