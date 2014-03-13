@@ -17,11 +17,11 @@
           <td><%= @property.name %></td>
 
           <td> 
-            <%= link_to "Display Contact Information", tenant_of_path(rel, propertyID: @property.id), class: 'pull-right btn btn-large btn-success' %>
+            <%= link_to "Display Contact Information", tenant_of_path(rel), class: 'pull-right btn btn-large btn-success' %>
           </td> 
     
           <td>
-            <%= link_to 'Remove Tenant From Property', tenant_of_path(rel, propertyID: @property.id), class: 'pull-right btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> 
+            <%= link_to 'Remove Tenant From Property', tenant_of_path(rel), class: 'pull-right btn btn-large btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %> 
           </td>        
         </tr>
       <% end %> 
