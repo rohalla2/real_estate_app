@@ -31,7 +31,7 @@
     <ul class="nav navbar-nav">
       <li><a href="/properties">Properties</a></li>
       <li><%= link_to "Information", "/information" %></li>
-      <% if @user %>
+      <% if @user && !@user.new_record? %>
         <li><%= link_to "Messages", messages_path %></li>
         <li><%= link_to "Payments", payments_path %></li>
         <li><%= link_to "Applications", applications_path %></li>
