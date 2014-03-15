@@ -1,5 +1,7 @@
 <h1>Available Properties</h1>
 
+<%= will_paginate @properties, renderer: BootstrapPagination::Rails %>
+
  <% @properties.each do |property| %>
 
   <div class="row">
@@ -31,6 +33,9 @@
     </div>
   </div>    
  <% end %>
+
+<%= will_paginate @properties, renderer: BootstrapPagination::Rails %>
+<br>
 
  <% if @user && @user.user_type == "Manager" %>
   <%= link_to 'New Property', new_property_path, class: "btn btn-success pull-left" %>

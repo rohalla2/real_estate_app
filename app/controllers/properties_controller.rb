@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   
   #lists propertys that are currently available
   def index
-    @properties = Property.where(:is_available => true)
+    @properties = Property.all.paginate(page: params[:page], per_page: 5, order: 'date_available', conditions: {is_available: true}) 
   end
 
   #any manager may add a new property
